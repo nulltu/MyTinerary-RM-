@@ -1,22 +1,41 @@
+const City=require('../models/City')
+
 const cityController={
 
-    listCities:(req, res)=>{
-
-        const citiesTour=[
-            {country:'Spain', city: 'Madrid', nieve: false},
-            {country:'France', city: 'Paris', nieve: true}
-        ]
+    listCities: async(req, res)=>{
+        //Solicito la lista de cities.
+       const list = await City.find()
         res.json({
             success:true,
-            cities:citiesTour
+            City: list
+
+            //con .then 
+            //.then(list=>{
+            //     res.json({success:true, list:list})
+            // })
+            // .catch(error =>{
+            //     res.json({success:false, error:error})
+            // })
         })
     },
 
     addCity:(req, res)=>{
-        const {country, city, nieve} =req.body
+        const {city, country, photo} =req.body
+       
+        const newCity = new City({
+            city: city,
+            country:country,
+            photo:photo
+        })
 
+        newCity.save() 
+        .then(user=>{
+            res.json({success: true, user:user})
+        })
+        .catch(error=>{
+            res.json({success:false, error: error})
+        })
     }
-
 }
 
 
