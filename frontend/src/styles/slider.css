@@ -1,0 +1,48 @@
+
+.text-message-two{
+    text-align: center;
+    color:#000000;
+    font-size: 2.5em;
+    font-weight: bolder;
+    background-color: #EAB14D;
+    padding:0.3em;
+    border: 5px solid #EAB14D;
+    margin: 0px;
+  }
+  
+  .card{
+    padding: 3vw;
+  }
+  
+  .title-city{
+    margin-top: 0em;
+    padding:0.3vw;
+    background-color: #EAB14D;
+    border-radius: 0px 0px 2px 2px;
+    color: #000000;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .carousel-item{
+    padding-bottom: 2vw;
+    padding-top: 2vw;
+  }
+  
+  .alice-carousel__dots-item:hover, .alice-carousel__dots-item.__active {
+    background-color: #EAB14D!important;
+  }
+  
+  .alice-carousel__prev-btn-item, .alice-carousel__next-btn-item{
+    color: #000000!important;
+  }
+  
+  .carousel-item.center.row.card{
+    background-color: #DFDDE2;
+    margin-top: 0px;
+  }
+  
+  .alice-carousel__prev-btn [data-area]::after, .alice-carousel__next-btn [data-area]::after {
+    position: relative;
+    content: attr(data-area);
+    text-transform: capitalize;
+  }

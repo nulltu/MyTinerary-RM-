@@ -1,0 +1,56 @@
+.nav-wraper{
+    background-color: rgba(235, 14, 14,0.01);
+    padding-top: 3em;
+}
+
+.right.hide-on-med-and-down{
+    margin-right: 6em;
+    margin-top: 3.5em;
+}
+
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
+    box-shadow: none!important;
+}
+
+.logo-principal.brand-logo{
+    width: 8em;
+    margin-left: 4vw;
+}
+
+.icon-menu{
+    color: #EAB14D!important;
+}
+
+.img-profile{
+    margin-top: -1em;
+    width:4vw;
+    padding: 0px;
+}
+
+.img-profile-ref{
+    padding: 1.5em 1.5em 1.5em 1.5em;
+    margin-top: -0.5em;
+}
+
+.img-profile-ref:hover{
+    background-color: rgba(252, 252, 252,0.001);
+}
+
+
+#nav-mobile{
+    background-color: #EAB14D;
+}
+
+
+.container-message{
+
+    background-image: url('../images/hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }

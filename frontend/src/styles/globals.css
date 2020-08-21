@@ -1,0 +1,21 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: whitesmoke;
+}
+
+.footer-principal{
+  background-color: #EAB14D;
+}
+.logo-principal-footer{
+  width: 8em;
+  padding: 0px;
+}
+
+#logo{
+  margin-top: -30px;
+}
+
+.link-footer{
+  color:#000000;
+  font-weight: bold;
+}

@@ -1,0 +1,73 @@
+#arrowAnim {
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .arrow {
+    width: 0.3vw;
+    height: 0.3vw;
+    border: 0.5vw solid;
+    border-color: #EAB14D transparent transparent #EAB14D;
+    transform: rotate(135deg);
+  }
+  
+  .arrowSliding {
+    position: absolute;
+    -webkit-animation: slide 4s linear infinite; 
+            animation: slide 4s linear infinite;
+  }
+  
+  .delay1 {
+    -webkit-animation-delay: 1s; 
+      animation-delay: 1s;
+  }
+  .delay2 {
+    -webkit-animation-delay: 2s; 
+      animation-delay: 2s;
+  }
+  .delay3 {
+    -webkit-animation-delay: 3s; 
+      animation-delay: 3s;
+  }
+  
+  @-webkit-keyframes slide {
+      0% { opacity:0; transform: translateX(5vw); }	
+     20% { opacity:1; transform: translateX(3vw); }	
+     80% { opacity:1; transform: translateX(-3vw); }	
+    100% { opacity:0; transform: translateX(-5vw); }	
+  }
+  @keyframes slide {
+      0% { opacity:0; transform: translateX(5vw); }	
+     20% { opacity:1; transform: translateX(3vw); }	
+     80% { opacity:1; transform: translateX(-3vw); }	
+    100% { opacity:0; transform: translateX(-5vw); }	
+  }
+  
+  .arrow-animated{
+    text-align: center;
+    padding: 2em;
+  }
+  
+  .text-message{
+    margin-top:12em;
+    text-align: center;
+    font-weight: bold;
+    font-size: calc(1.2em + 1.2vw);
+    color:#DFDDE2;
+  }
+  
+  .container-fluid.center{
+    background-color: #EAB14D;
+    padding: 1em;
+    margin-top:3em;
+    margin-left: 40vw;
+    margin-right: 40vw;
+  }
+  
+  .nav-cities{
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+  }
