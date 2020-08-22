@@ -20,10 +20,10 @@ const cityController={
     },
 
     addCity:(req, res)=>{
-        const {city, country, photo} =req.body
+        const {name, country, photo} =req.body
        
         const newCity = new City({
-            city: city,
+            name: name,
             country:country,
             photo:photo
         })

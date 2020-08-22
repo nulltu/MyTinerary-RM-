@@ -1,60 +1,51 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import TheFooter from '../components/TheFooter'
-import Digimon from '../components/Digimon'
-import Header from '../components/Header'
+import City from '../components/City'
 
 
 class Cities extends React.Component {
 
     state = {
-        digimones: [],
-        digimonesFiltrados:[]
+        cities: [],
+        citiesfiltradas:[]
     }
 
     async componentDidMount() {
-           const responseApi  = await fetch('https://digimon-api.vercel.app/api/digimon')
+           const responseApi  = await fetch('http://127.0.0.1:5000/api/cities')
            const infoApi = await responseApi.json()
-            const dataDigimon = infoApi
-            console.log(infoApi)
-
+            const dataCity = infoApi.City
+            // console.log(infoApi)
             this.setState({
-                digimones: dataDigimon,
-                digimonesFiltrados: dataDigimon
+                cities: dataCity,
+                citiesfiltradas: dataCity
             })
            }
 
-            handleChange= e =>{
-              const valorBuscado = e.target.value
-              const filtradosDigimon = this.state.digimones.filter(digimon =>digimon.name.trim().toLowerCase().indexOf(valorBuscado.trim().toLowerCase())===0)
-              this.setState({
-                  digimonesFiltrados: filtradosDigimon
-              })
-           }
+           handleChange= e =>{
+            const valorBuscado = e.target.value
+            const filtradosCity = this.state.cities.filter(city =>city.name.trim().toLowerCase().indexOf(valorBuscado.trim().toLowerCase())===0)
+            this.setState({
+                citiesfiltradas: filtradosCity
+            })
+         }
+            
         render() {
-
-        // console.log(this.state)
+            console.log(this.state.cities)
 
         return (
             <>
-                <Header/>
                  <div>
-                <NavLink className="wtq" to='/home'>Ir a la Home</NavLink>
+                   <h1>Lista de Ciudades</h1>
+                   <input type="text"  name="city" id="city" placeholder="What city are you looking for?"
+                    onChange={this.handleChange}/>
+                    <div className="row">
+                        <ul>
+                            {this.state.citiesfiltradas.map(city=>{
+                                return <City city={city}/>
+                            })}
+                        </ul>
+                    </div>
                 </div>
-                <h1 style={{textAlign:'center'}}>Lista de Digimones</h1>
-                <div className="blue" style={{color:'black', margin:'20px', textAlign:'center'}}>
-                <input type="text"  name="digimon" id="digimon" placeholder="¿Qué Digimon estas buscando?"
-                onChange={this.handleChange}/>
-                </div>
-                <div className="row">
-                <ul style={{textAlign:'center'}}>
-                    {this.state.digimonesFiltrados.map(digimon=>{
-                        return  <Digimon digimon= {digimon}  key={digimon}/>
-                    })}
-                </ul> 
-                </div>
-              
-                <TheFooter />
             </>
         )
     }
