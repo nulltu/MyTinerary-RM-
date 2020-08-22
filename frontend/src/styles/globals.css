@@ -1,6 +1,9 @@
+html{
+  background-color: whitesmoke;
+}
 body{
     font-family: 'Open Sans', sans-serif;
-    background-color: whitesmoke;
+    background-color:whitesmoke rgb(255, 255, 255);
 }
 
 .footer-principal{
@@ -19,3 +22,25 @@ body{
   color:#000000;
   font-weight: bold;
 }
+
+.card-cities-page{
+  background-color: whitesmoke!important;
+}
+
+  
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #EAB14D!important;
+    box-shadow: 0 1px 0 0 #EAB14D!important;
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+

@@ -10,9 +10,6 @@
     margin: 0px;
   }
   
-  .card{
-    padding: 3vw;
-  }
   
   .title-city{
     margin-top: 0em;
@@ -37,7 +34,8 @@
   }
   
   .carousel-item.center.row.card{
-    background-color: #DFDDE2;
+    background-color: whitesmoke!important;
+    padding: 3vw;
     margin-top: 0px;
   }
   

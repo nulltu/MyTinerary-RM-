@@ -1,6 +1,9 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import Header from '../components/Header'
 import City from '../components/City'
+import TheFooter from '../components/TheFooter'
+import { Row } from 'react-materialize'
+
 
 
 class Cities extends React.Component {
@@ -21,7 +24,7 @@ class Cities extends React.Component {
             })
            }
 
-           handleChange= e =>{
+           capturarValor= e =>{
             const valorBuscado = e.target.value
             const filtradosCity = this.state.cities.filter(city =>city.name.trim().toLowerCase().indexOf(valorBuscado.trim().toLowerCase())===0)
             this.setState({
@@ -34,18 +37,22 @@ class Cities extends React.Component {
 
         return (
             <>
-                 <div>
-                   <h1>Lista de Ciudades</h1>
-                   <input type="text"  name="city" id="city" placeholder="What city are you looking for?"
-                    onChange={this.handleChange}/>
-                    <div className="row">
-                        <ul>
+                <Header />
+               
+             
+                <h1 style={{textAlign:'center', color:'#EAB14D', fontSize:'3em', fontWeight:'bold'}}>Lista de Ciudades</h1>
+                <Row className="container">
+                <div class="input-field col s12">
+                   <input className="center imput-cities" type="text"  name="city" id="city" placeholder="What city are you looking for?"
+                    onChange={this.capturarValor}/>
+                </div>
+                </Row>
+                 <div className="row">
                             {this.state.citiesfiltradas.map(city=>{
                                 return <City city={city}/>
                             })}
-                        </ul>
-                    </div>
-                </div>
+                </div >
+                <TheFooter />
             </>
         )
     }
