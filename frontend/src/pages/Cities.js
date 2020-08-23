@@ -5,12 +5,11 @@ import TheFooter from '../components/TheFooter'
 import { Row } from 'react-materialize'
 
 
-
 class Cities extends React.Component {
 
     state = {
         cities: [],
-        citiesfiltradas:[]
+        filteredCities:[]
     }
 
     async componentDidMount() {
@@ -20,15 +19,15 @@ class Cities extends React.Component {
             // console.log(infoApi)
             this.setState({
                 cities: dataCity,
-                citiesfiltradas: dataCity
+                filteredCities: dataCity
             })
            }
 
            capturarValor= e =>{
             const valorBuscado = e.target.value
-            const filtradosCity = this.state.cities.filter(city =>city.name.trim().toLowerCase().indexOf(valorBuscado.trim().toLowerCase())===0)
+            const filterCities = this.state.cities.filter(city =>city.name.trim().toLowerCase().indexOf(valorBuscado.trim().toLowerCase())===0)
             this.setState({
-                citiesfiltradas: filtradosCity
+                filteredCities: filterCities
             })
          }
             
@@ -37,10 +36,7 @@ class Cities extends React.Component {
 
         return (
             <>
-                
-               
-             
-                <h1 style={{textAlign:'center', color:'#EAB14D', fontSize:'3em', fontWeight:'bold'}}>Lista de Ciudades</h1>
+                <h1 style={{textAlign:'center', color:'#EAB14D', fontSize:'3em', fontWeight:'bold'}}>Cities</h1>
                 <Row className="container">
                 <div class="input-field col s12">
                    <input className="center imput-cities" type="text"  name="city" id="city" placeholder="What city are you looking for?"
@@ -48,7 +44,7 @@ class Cities extends React.Component {
                 </div>
                 </Row>
                  <div className="row">
-                            {this.state.citiesfiltradas.map(city=>{
+                            {this.state.filteredCities.map(city=>{
                                 return <City city={city}/>
                             })}
                 </div >

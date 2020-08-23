@@ -14,7 +14,7 @@ function Header() {
         <nav className="nav-wraper" role="navigation">
           <img className="logo-principal brand-logo" src={logo} alt="img-logo"/>
           <ul className="right hide-on-med-and-down">
-            <li><NavLink to="/Cities">Cities</NavLink></li>
+            <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="">Link2</NavLink></li>
             <li><NavLink to="">Link3</NavLink></li>
             <li>

@@ -71,3 +71,13 @@
   font-weight: bold;
   font-size: 1.2em;
   }
+
+  
+  .btn, .btn-large, .btn-small{
+    background-color: #EAB14D!important;
+    width: 10em;
+  }
+
+  .message-btn{
+    font-weight: bold;
+  }

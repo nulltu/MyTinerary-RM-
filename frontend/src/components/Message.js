@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/message.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 
 function Message() {
@@ -29,9 +29,10 @@ function Message() {
         </div>
 
       </div>
-      <div className="container-fluid center">
-        <NavLink className="nav-cities" to="/Cities">Cities</NavLink>
+      <div className="center">
+      <Link className="btn message-btn" data-position="bottom" to="/Cities">Cities<i class="material-icons left icon-arrow_forward">arrow_forward</i></Link>
       </div>
+     
     </>
   )
 }
