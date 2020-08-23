@@ -4,6 +4,7 @@ import Cities from './pages/Cities'
 import 'materialize-css/dist/css/materialize.css'
 import '../src/styles/globals.css'
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
+import Header from './components/Header'
 
 
 
@@ -15,10 +16,11 @@ class App extends React.Component{
     
       <>
           <BrowserRouter>
+          <Header />
           <Switch>
-          <Route path='/home' component={Home}/>
+          <Route exact path='/' component={Home}/>
           <Route path='/cities' component={Cities}/>
-          <Redirect to='/home'/>
+          <Redirect to='/'/>
           </Switch>
           </BrowserRouter>
 

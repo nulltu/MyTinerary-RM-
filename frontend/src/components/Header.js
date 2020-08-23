@@ -26,7 +26,7 @@ function Header() {
             <li><NavLink to="">Link2</NavLink></li>
             <li><NavLink to="">Link3</NavLink></li>
           </ul>
-          <ul id="dropdown1" className="dropdown-content">
+          <ul id="dropdown1" className="hover dropdown-content">
             <li><NavLink to="">Login</NavLink></li>
             <li><NavLink to="">Create Account</NavLink></li>
           </ul>

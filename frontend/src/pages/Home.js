@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../components/Header'
 import Footer from '../components/TheFooter'
 import Slider from '../components/Slide'
 
@@ -15,7 +14,7 @@ render(){
     
     <>
 
-    <Header/>
+
     <Slider/>
     <Footer/>
     </>  

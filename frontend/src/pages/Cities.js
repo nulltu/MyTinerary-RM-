@@ -37,7 +37,7 @@ class Cities extends React.Component {
 
         return (
             <>
-                <Header />
+                
                
              
                 <h1 style={{textAlign:'center', color:'#EAB14D', fontSize:'3em', fontWeight:'bold'}}>Lista de Ciudades</h1>
