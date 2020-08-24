@@ -1,6 +1,6 @@
-.nav-wraper{
-    background-color: rgba(235, 14, 14,0.01);
-    padding-top: 3em;
+
+.nav-principal{
+    background-color: rgba(234, 177, 77,0.002)!important;
 }
 
 .right.hide-on-med-and-down{
@@ -34,11 +34,6 @@
 
 .img-profile-ref:hover{
     background-color: rgba(252, 252, 252,0.001);
-}
-
-
-#nav-mobile{
-    background-color: #EAB14D;
 }
 
 
