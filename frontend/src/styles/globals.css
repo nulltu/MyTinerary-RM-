@@ -48,3 +48,19 @@ body{
     font-weight: bold!important;
     color: whitesmoke!important;
   }
+
+  ::placeholder {
+    color: rgb(124, 123, 79)!important;
+    opacity: 1; /* Firefox */
+    font-size: calc(0.6em + 0.6vw)!important;
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(124, 123, 79)!important;
+    font-size: calc(0.6em + 0.6vw)!important;
+   }
+   
+   ::-ms-input-placeholder { /* Microsoft Edge */
+    color:rgb(124, 123, 79)!important;
+    font-size: calc(0.6em + 0.6vw)!important;
+   }

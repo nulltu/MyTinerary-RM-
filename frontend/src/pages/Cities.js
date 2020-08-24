@@ -24,7 +24,9 @@ class Cities extends React.Component {
            }
 
            capturarValor= e =>{
+               //tomo el value del input
             const valorBuscado = e.target.value
+            //creo una constante y hago un filter del array cities
             const filterCities = this.state.cities.filter(city =>city.name.trim().toLowerCase().indexOf(valorBuscado.trim().toLowerCase())===0)
             this.setState({
                 filteredCities: filterCities
@@ -32,15 +34,15 @@ class Cities extends React.Component {
          }
             
         render() {
-            console.log(this.state.cities)
+            // console.log(this.state.cities)
 
         return (
             <>
                 <h1 style={{textAlign:'center', color:'#EAB14D', fontSize:'3em', fontWeight:'bold'}}>Cities</h1>
                 <Row className="container">
-                <div class="input-field col s12">
-                   <input className="center imput-cities" type="text"  name="city" id="city" placeholder="What city are you looking for?"
-                    onChange={this.capturarValor}/>
+                <div class="input-field center container" style={{width:'40vw'}}>
+                     <input className="center imput-cities" type="text" data-length="10"  name="city" placeholder="What city are you looking for?" id="city" 
+                    onChange={this.capturarValor}/>      
                 </div>
                 </Row>
                  <div className="row">

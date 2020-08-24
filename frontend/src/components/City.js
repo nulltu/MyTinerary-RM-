@@ -11,7 +11,7 @@ function City(props) {
                     s={12}
                 >
                     <Card className="card-cities-page container-fluid"
-                    header={<CardTitle image={props.city.photo}>{props.city.name}</CardTitle>}
+                    header={<CardTitle image={props.city.photo}>{props.city.name +", " + props.city.country}</CardTitle>}
                     >
                     </Card>
                 </Col>
