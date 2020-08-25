@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "backend": "nodemon ./server.js",
-    "frontend":"cd .. && cd frontend && npm start",
-    "proyect": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run frontend\""
+    "frontend": "cd .. && cd frontend && npm start",
+    "dev": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run frontend\""
   },
   "author": "",
   "license": "ISC",

@@ -13,7 +13,7 @@ const itineraryController={
         const {hashtag, title, profilePhoto, rating, duration, price, cityId} =req.body
        
         const newItinerary = new Itinerary({
-            hashtag: hashtag,
+            hashtag:hashtag,
             title:title,
             profilePhoto:profilePhoto,
             rating:rating,

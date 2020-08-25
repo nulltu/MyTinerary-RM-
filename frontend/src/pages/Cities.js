@@ -16,7 +16,7 @@ class Cities extends React.Component {
            const responseApi  = await fetch('http://127.0.0.1:5000/api/cities')
            const infoApi = await responseApi.json()
             const dataCity = infoApi.City
-            // console.log(infoApi)
+            console.log(infoApi)
             this.setState({
                 cities: dataCity,
                 filteredCities: dataCity
