@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "backend": "nodemon ./server.js",
-    "frontend":"cd .. && cd frontend && npm start",
+    "frontend": "cd .. && cd frontend && npm start",
     "proyect": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run frontend\""
   },
   "author": "",
@@ -15,6 +15,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.10.0"
+    "mongoose": "^5.10.0",
+    "nodemon": "^2.0.4"
   }
 }
