@@ -1,26 +1,31 @@
 import React from 'react'
-import {Col, CardTitle, Card} from 'react-materialize'
-import {NavLink} from 'react-router-dom'
+import { Col, CardTitle, Card } from 'react-materialize'
+import { NavLink, Link } from 'react-router-dom'
 
 
-function City(props) {
-    return (
-        <>   
-                <Col
-                    l={4}
-                    m={6}
-                    s={12}
-                >
-                    <Card  className="card-cities-page container-fluid"
-                    actions={[
-                        <NavLink key="1" to={`./cityItinerary/${props.city._id}`}>This is a Link</NavLink>
-                      ]}
-                    header={<CardTitle image={props.city.photo}>{props.city.name +", " + props.city.country}</CardTitle>}
+
+
+class City extends React.Component {
+    render() {
+        return (
+            <>
+
+                <Link to={`./cityItinerary/${this.props.city._id}`}>
+                    <Col
+                        l={3}
+                        m={6}
+                        s={12}
                     >
-                    </Card>
-                </Col>
-            
-        </>
-    )
+                        <Card className="card-cities-page container-fluid"
+                            header={<CardTitle image={this.props.city.photo}>{this.props.city.name + ", " + this.props.city.country}</CardTitle>}
+                        >
+                        </Card>
+                    </Col>
+                </Link>
+            </>
+        )
+
+    }
+
 }
 export default City

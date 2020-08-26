@@ -5,6 +5,7 @@ import TheFooter from '../components/TheFooter'
 import { Row } from 'react-materialize'
 
 
+
 class Cities extends React.Component {
 
     state = {
@@ -35,6 +36,7 @@ class Cities extends React.Component {
             
         render() {
             // console.log(this.state.cities)
+            // console.log(this.props)
 
         return (
             <>
@@ -47,8 +49,11 @@ class Cities extends React.Component {
                 </Row>
                  <div className="row">
                             {this.state.filteredCities.map(city=>{
-                                return <City city={city}/>
-                            })}
+                                return (
+                                <>
+                                <City city={city}/>
+                                </>
+                            )})}
                 </div >
                 <TheFooter />
             </>
