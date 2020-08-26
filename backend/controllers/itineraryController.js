@@ -11,7 +11,6 @@ const itineraryController={
 
     addItinerary:(req, res)=>{
         const {hashtag, title, profilePhoto, rating, duration, price, cityId} =req.body
-       
         const newItinerary = new Itinerary({
             hashtag:hashtag,
             title:title,
@@ -28,6 +27,14 @@ const itineraryController={
         })
         .catch(error=>{
             res.json({success:false, error: error})
+        })
+    },
+    
+
+    bringCityItinerary:async(req, res)=>{
+        const itineratySearch = await Itinerary.findOne({cityId: req.params.id})
+        res.json({
+            Itinerary : itineratySearch
         })
     }
 }

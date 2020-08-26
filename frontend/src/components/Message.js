@@ -30,7 +30,7 @@ function Message() {
 
       </div>
       <div className="center">
-      <Link className="btn message-btn" data-position="bottom" to="/Cities">Cities<i class="material-icons left icon-arrow_forward">arrow_forward</i></Link>
+      <Link className="btn message-btn" data-position="bottom" to="/Cities">Cities<i className="material-icons left icon-arrow_forward">arrow_forward</i></Link>
       </div>
      
     </>
