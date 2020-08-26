@@ -7,7 +7,7 @@ import React from  'react'
 class CityItinerary extends React.Component{
 
     state = {
-        itinerary:{}
+        itinerary:[]
     }
 
    async componentDidMount(){
