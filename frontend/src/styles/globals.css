@@ -66,6 +66,16 @@ body{
    }
 
 
-   .material-icons{
+   .material-icons.itinerary{
      color:#EAB14D;
+   }
+
+   .like__img{
+     width: 2em;
+     margin-right: 1em;
+   }
+
+   .like__container{
+     display: flex;
+     justify-content: center;
    }

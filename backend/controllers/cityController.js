@@ -39,7 +39,7 @@ const cityController={
     },
 
     viewCity:async(req, res)=>{
-        const citySearch = await City.findOne({_id: req.params.id})
+        const citySearch = await City.find({_id: req.params.id})
         res.json({
             City : citySearch
         })

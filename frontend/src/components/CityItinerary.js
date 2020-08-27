@@ -3,13 +3,15 @@ import TheFooter from '../components/TheFooter'
 import { Link } from 'react-router-dom'
 import { Row } from 'react-materialize'
 import notAvailable from '../images/Not Available.svg'
+import like from '../images/like.svg'
+
 
 
 class CityItinerary extends React.Component {
 
 
     state = {
-        itinerary: [],
+        itineraries: [],
         cities: []
     }
 
@@ -18,8 +20,7 @@ class CityItinerary extends React.Component {
 
         const responseApi = await fetch(`http://127.0.0.1:5000/api/cityItinerary/${idSearch}`)
         const infoApi = await responseApi.json()
-        const dataItinerary = infoApi.Itinerary
-        console.log(dataItinerary)
+        const dataItineraries = infoApi.Itinerary
 
 
         const responseApiCities = await fetch(`http://127.0.0.1:5000/api/cities/${idSearch}`)
@@ -27,77 +28,50 @@ class CityItinerary extends React.Component {
         const dataCity = infoCities.City
 
         this.setState({
-            itinerary: dataItinerary,
+            itineraries: dataItineraries,
             cities: dataCity
         })
     }
 
 
-
-
     render() {
-
+        // console.log(this.state.itineraries)
         console.log(this.state.cities)
-        console.log(this.state.itinerary)
 
-        // if (this.state.itinerary.length > 0) {
+
         return (
+
             <>
-
-                <h1 style={{ textAlign: 'center' }}>Itinerary</h1>
-
-                <Row className="container center">
-                    {this.state.itinerary.map(itinerary => {
-                        return (
-
-                            <div className="card horizontal col m6">
-                                <div className="card-image">
-                                    <img src={itinerary.profilePhoto}></img>
-                                </div>
-                                <div className="card-content">
-                                    <h3>{itinerary.title}</h3>
-                                    <p>{itinerary.hashtag}</p>
-                                    <p>Rating: {itinerary.rating}</p>
-                                    <p>precio: {itinerary.price}</p>
-                                    <p>{itinerary.comments}</p>
+                {this.state.itineraries.map(itinerary => {
+                    return (
+                        <>
+                            <div className="card__travellers">
+                                <div className="itinerary__post">
+                                    <div className="itinerary__post__img">
+                                        <img className="img__card" src={itinerary.profilePhoto} alt="imgCard"></img>
+                                    </div>
+                                    <div className="itinerary__post__info">
+                                        <div className="itinerary__post__content">
+                                            <span>{itinerary.hashtag}</span>
+                                            <span>{itinerary.price}</span>
+                                            <span>{itinerary.duration}</span>
+                    <div className="like__container"><img className="like__img" src={like}></img><span>{itinerary.rating}</span></div>
+                                        </div>
+                                        <h1 className="itinerary__post__title">Travel Food</h1>
+                                        <p className="itinerary__post__comments">
+                                            "{itinerary.comments}"
+                                          </p>
+                                        <Link href="|" className="itinerary__post__cta">View More</Link>
+                                    </div>
                                 </div>
 
                             </div>
-                        )
-                    })}
-
-                </Row>
-                <div className="center">
-                    <Link to="/cities"><i class="large material-icons">arrow_back</i></Link>
-                    {/* <Link to="/"><i class="large material-icons">home</i></Link>
-                    <Link><i class="large material-icons">arrow_forward</i>s</Link> */}
-                </div>
-                <TheFooter />
-
+                        </>
+                    )
+                })}
             </>
-
         )
     }
-
-    //     else {
-    //         return (
-    //             <>
-    //             <div className="center">
-    //                 <img style={{ width: '40vw' }} src={notAvailable}></img>
-    //             </div>
-    //             <div className="center">
-    //             <Link to="/cities"><i class="large material-icons">arrow_back</i></Link>
-    //             {/* <Link to="/"><i class="large material-icons">home</i></Link>
-    //         <Link><i class="large material-icons">arrow_forward</i>s</Link> */}
-    //         </div>
-    //         <TheFooter />
-
-    //         </>
-    //         )
-
-    //     }
-
-    // }
 }
 
 export default CityItinerary

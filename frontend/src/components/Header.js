@@ -42,10 +42,10 @@ render(){
         >
           <NavLink to="/">
             Home
+          </NavLink>
+          <NavLink to="/card">
+            Card
   </NavLink>
-          <NavItem href="">
-            Link 2
-  </NavItem>
           <NavItem href="">
             Link 3
   </NavItem>
