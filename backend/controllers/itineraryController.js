@@ -32,7 +32,7 @@ const itineraryController={
     
 
     bringCityItinerary:async(req, res)=>{
-        const itineratySearch = await Itinerary.find({cityId: req.params.id})
+        const itineratySearch = await Itinerary.findOne({cityId: req.params.id})
         res.json({
             Itinerary : itineratySearch
         })

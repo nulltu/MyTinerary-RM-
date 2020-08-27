@@ -1,5 +1,6 @@
 const City=require('../models/City')
 
+
 const cityController={
 
     listCities: async(req, res)=>{
@@ -34,6 +35,13 @@ const cityController={
         })
         .catch(error=>{
             res.json({success:false, error: error})
+        })
+    },
+
+    viewCity:async(req, res)=>{
+        const citySearch = await City.findOne({_id: req.params.id})
+        res.json({
+            City : citySearch
         })
     }
 }

@@ -6,6 +6,7 @@ import { Row } from 'react-materialize'
 
 
 
+
 class Cities extends React.Component {
 
     state = {
@@ -55,6 +56,7 @@ class Cities extends React.Component {
                                 </>
                             )})}
                 </div >
+
                 <TheFooter />
             </>
         )

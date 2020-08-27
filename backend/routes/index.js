@@ -15,6 +15,9 @@ router.route('/itineraries')
 router.route('/cityItinerary/:id')
 .get(itinieraryController.bringCityItinerary)
 
+router.route('/cities/:id')
+.get(cityController.viewCity)
+
 module.exports = router
 
 
