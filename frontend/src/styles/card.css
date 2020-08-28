@@ -139,3 +139,23 @@ html{
         height: 100vh;
     }
 }
+
+
+.like__img{
+    width: 2em;
+    margin-right: 1em;
+  }
+
+  .watch__img{
+    width: 2em;
+    margin-right: 1em;
+  }
+  .like__container{
+    display: flex;
+    justify-content: center;
+  }
+
+  .money__img{
+    width: 3em;
+    margin-right: 1em;
+  }
