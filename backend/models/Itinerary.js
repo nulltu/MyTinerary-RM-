@@ -7,6 +7,7 @@ const itinerarySchema= new mongoose.Schema({
     rating:{type: Number, required: true},
     duration:{type:Number, required: true},
     price:{type:Number, required:true},
+    comments:{type:Array, required:true},
     cityId:{type:mongoose.Schema.ObjectId, ref:'city'}
 })
 

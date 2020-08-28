@@ -1,16 +1,17 @@
 import React from 'react'
 import { Col, CardTitle, Card } from 'react-materialize'
-import { NavLink, Link } from 'react-router-dom'
+import {Link } from 'react-router-dom'
 
 
 
 
 class City extends React.Component {
     render() {
+        // console.log(this.props)
         return (
             <>
 
-                <Link to={`./cityItinerary/${this.props.city._id}`}>
+                <Link to={`./cityItinerary/${this.props.city._id}#vale`}>
                     <Col
                         l={3}
                         m={6}

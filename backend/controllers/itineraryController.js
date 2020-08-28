@@ -10,7 +10,7 @@ const itineraryController={
     },
 
     addItinerary:(req, res)=>{
-        const {hashtag, title, profilePhoto, rating, duration, price, cityId} =req.body
+        const {hashtag, title, profilePhoto, rating, duration, price, comments, cityId} =req.body
         const newItinerary = new Itinerary({
             hashtag:hashtag,
             title:title,
@@ -18,6 +18,7 @@ const itineraryController={
             rating:rating,
             duration:duration,
             price:price,
+            comments:comments,
             cityId:cityId
         })
 
