@@ -38,7 +38,7 @@ class CityItinerary extends React.Component {
             return (
                 <>
                 
-                <h2 id="vale" style={{ textAlign: 'center', fontSize: '4em', backgroundColor: '#EAB14D', margin: '0px', padding: '0.5em', color: 'whitesmoke', fontWeight: 'bold' }}>Itineraries</h2>
+                <h2 style={{ textAlign: 'center', fontSize: '4em', backgroundColor: '#EAB14D', margin: '0px', padding: '0.5em', color: 'whitesmoke', fontWeight: 'bold' }}>Itineraries</h2>
                 {this.state.itineraries.length === 0
                 ? (<div style={{ textAlign: 'center' }}><img style={{ width: '30vw' }} src={notAvailable} /></div>)
                 :   
@@ -53,7 +53,7 @@ class CityItinerary extends React.Component {
                 {this.state.itineraries.map(itinerary => {
                 return  <CardItinerary itinerary={itinerary}/>
                 })}
-                <div className="center">
+                <div className="center" style={{marginTop:'3em'}}>
                         <Link to="/cities"><i class="large material-icons itinerary">arrow_back</i></Link>
                 </div>
                 <TheFooter />s

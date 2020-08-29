@@ -2,11 +2,21 @@ import React from 'react'
 import like from '../images/like.svg'
 import watch from '../images/watch.svg'
 import money from '../images/money.svg'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../styles/card.css'
 
 
 class CardItinerary extends React.Component {
+
+    state = {
+        viewMore: false
+    }
+
+    changeState = () => {
+            this.setState({
+            viewMore : !this.state.viewMore
+        })
+    }
     render() {
         return (
             <>
@@ -23,10 +33,20 @@ class CardItinerary extends React.Component {
                                 <span>{this.props.itinerary.hashtag}</span>
                             </div>
                             <h1 className="itinerary__post__title">{this.props.itinerary.title}</h1>
-                            <Link href="|" className="itinerary__post__cta">View More</Link>
                         </div>
                     </div>
                 </div>
+                <div className="center container__viewmore">
+               
+                            {this.state.viewMore
+                                ? (<div>
+                                    <h1>Soy la descripción o lo que haya que mostrar</h1>
+                                </div>)
+                                : null
+                            }
+                             <Link href="" className="itinerary__post__cta" onClick={this.changeState} >{this.state.viewMore ? 'view less':'view more'}</Link>s
+                </div>
+                
             </>
         )
     }

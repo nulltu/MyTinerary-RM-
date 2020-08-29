@@ -15,7 +15,6 @@ html{
     align-items: center;
     justify-content: center;
     background-color: #eee;
-    padding: 0 1.5rem;
 }
 
 .itinerary__post{
@@ -62,6 +61,7 @@ html{
     font-size: 1.6rem;
     font-weight: 600;
     margin: .5rem 0;
+
 }
 
 .itinerary__post__title{
@@ -78,7 +78,6 @@ html{
 }
 
 .itinerary__post__cta{
-    display: inline-block;
     padding: 1.5rem 3rem;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -136,8 +135,9 @@ html{
 
     .card__travellers{
         width: 100%;
-        height: 100vh;
+        height: 85vh;
     }
+
 }
 
 
@@ -159,3 +159,8 @@ html{
     width: 3em;
     margin-right: 1em;
   }
+
+  .center.container__viewmore{
+      margin-top: -50px;
+  }
+ 
