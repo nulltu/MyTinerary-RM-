@@ -2,6 +2,7 @@ const express = require ('express')
 const router = express.Router()
 const cityController = require('../controllers/cityController')
 const itinieraryController =require('../controllers/itineraryController')
+const activityController = require('../controllers/activityController')
 
 
 router.route('/cities')
@@ -17,6 +18,14 @@ router.route('/cityItinerary/:id')
 
 router.route('/cities/:id')
 .get(cityController.viewCity)
+
+
+router.route('/activities')
+.post(activityController.addActivity)
+.get(activityController.ListActivities)
+
+router.route('/activities/:id')
+.get(activityController.bringActivity)
 
 module.exports = router
 

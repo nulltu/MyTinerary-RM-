@@ -11,7 +11,7 @@ class City extends React.Component {
         return (
             <>
 
-                <Link to={`./cityItinerary/${this.props.city._id}#vale`}>
+                <Link to={`./cityItinerary/${this.props.city._id}`}>
                     <Col
                         l={3}
                         m={6}
