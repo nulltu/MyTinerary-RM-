@@ -44,7 +44,7 @@ class CardItinerary extends React.Component {
                                 </div>)
                                 : null
                             }
-                             <Link href="" className="itinerary__post__cta" onClick={this.changeState} >{this.state.viewMore ? 'view less':'view more'}</Link>s
+                             <Link href="" className="itinerary__post__cta" onClick={this.changeState} >{this.state.viewMore ? 'view less':'view more'}</Link>
                 </div>
                 
             </>
