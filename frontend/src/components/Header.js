@@ -3,7 +3,7 @@ import logo from '../images/logo.svg'
 import "../styles/header.css";
 import imgProfile from '../images/profile.svg'
 import Message from "./Message";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { Dropdown, Button, Icon, SideNav, SideNavItem, Navbar, NavItem, Divider } from 'react-materialize'
 
 
@@ -25,7 +25,7 @@ render(){
       <div className="container-message container-fluid">
         <Navbar className="nav-principal"
           alignLinks="right"
-          brand={<a className="brand-logo" href="#"><img className="logo-principal brand-logo" src={logo} alt="img-logo" /></a>}
+          brand={<Link className="brand-logo" to="/"><img className="logo-principal brand-logo" src={logo} alt="img-logo" /></Link>}
           id="mobile-nav"
           menuIcon={<Icon className="icon-menu">menu</Icon>}
           options={{
@@ -40,15 +40,15 @@ render(){
             preventScrolling: true
           }}
         >
-          <NavLink to="/">
+          <NavLink className="link__nav" to="/">
             Home
-          </NavLink>
-          <NavLink to="">
+          </NavLink >
+          <NavLink className="link__nav" to="">
             Link2
-  </NavLink>
-          <NavItem href="">
+        </NavLink>
+          <NavItem className="link__nav" to="">
             Link 3
-  </NavItem>
+        </NavItem>
           <Dropdown
             id="Dropdown_6"
             options={{

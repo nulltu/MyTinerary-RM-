@@ -19,7 +19,7 @@ body{
   background-color: #EAB14D;
 }
 .logo-principal-footer{
-  width: 8em;
+  width: 15em;
   padding: 0px;
 }
 
@@ -30,6 +30,7 @@ body{
 .link-footer{
   color:#000000;
   font-weight: bold;
+  font-size: 1.5em;
 }
 
 .card-cities-page{

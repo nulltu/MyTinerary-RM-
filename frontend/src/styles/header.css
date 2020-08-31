@@ -1,3 +1,6 @@
+.link__nav{
+    font-size: 1.6em;
+}
 
 .nav-principal{
     background-color: rgba(234, 177, 77,0.002)!important;
@@ -13,7 +16,8 @@
 }
 
 .logo-principal.brand-logo{
-    width: 8em;
+    width: 14em;
+    padding: 1em;
     margin-left: 4vw;
 }
 
@@ -36,6 +40,15 @@
     background-color: rgba(252, 252, 252,0.001);
 }
 
+.dropdown-content li > a, .dropdown-content li > span {
+   
+    color: #5f3e04!important;
+  
+}
+
+.sidenav {
+    background-color: #EAB14D!important;
+}
 
 .container-message{
     background-image: url('../images/hero.jpg');

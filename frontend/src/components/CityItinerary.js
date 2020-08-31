@@ -40,7 +40,19 @@ class CityItinerary extends React.Component {
                 
                 <h2 style={{ textAlign: 'center', fontSize: '4em', backgroundColor: '#EAB14D', margin: '0px', padding: '0.5em', color: 'whitesmoke', fontWeight: 'bold' }}>Itineraries</h2>
                 {this.state.itineraries.length === 0
-                ? (<div style={{ textAlign: 'center' }}><img style={{ width: '30vw' }} src={notAvailable} /></div>)
+                ? ( 
+                    <div>
+                        {this.state.city.map(city=>{
+                            return(<>
+                             <div style={{ backgroundImage: `url(${city.photo})`, height: '50vh', backgroundPosition: 'center', margin: '0px', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+                    <h1 style={{ color: 'whitesmoke', textAlign: 'center', backgroundColor: 'rgba(245, 245, 245,0.5)', fontWeight: '1000', WebkitTextStroke: '1.5px black' }}>{city.name}, {city.country}</h1>
+                     </div>
+                            </>)
+                        })}
+                        <div style={{ textAlign: 'center' }}><img style={{ width: '30vw' }} src={notAvailable} /></div>
+                    </div>)
+        
+                    
                 :   
                     this.state.city.map(city=>{
                     return (

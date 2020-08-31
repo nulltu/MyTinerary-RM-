@@ -17,7 +17,23 @@ class CardItinerary extends React.Component {
             viewMore : !this.state.viewMore
         })
     }
+
+    
+
+
     render() {
+
+        function priceItinerary(price){
+            switch(price){
+                case 1: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money}/></div> )
+                case 2: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money}/><img className="money__img" src={money}/></div>)
+                case 3: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money}/><img className="money__img" src={money}/><img className="money__img" src={money}/></div>)
+                case 4: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money}/><img className="money__img" src={money}/><img className="money__img" src={money}/><img className="money__img" src={money}/></div>)
+                case 5: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money}/><img className="money__img" src={money}/><img className="money__img" src={money}/><img className="money__img" src={money}/><img className="money__img" src={money}/></div>)
+                default: return('Not value')
+            }   
+        }
+
         return (
             <>
                 <div id="card-itinerary" className="card__travellers">
@@ -25,9 +41,9 @@ class CardItinerary extends React.Component {
                         <div className="itinerary__post__img">
                             <img className="img__card" src={this.props.itinerary.profilePhoto} alt="imgCard"></img>
                         </div>
-                        <div className="itinerary__post__info">
+                        <div className="itinerary__post__info"> 
                             <div className="itinerary__post__content">
-                                <div className="like__container"><img className="money__img" src={money}></img><span>{this.props.itinerary.price}/5</span></div>
+                                <span>{priceItinerary(this.props.itinerary.price)}</span>
                                 <div className="like__container"><img className="watch__img" src={watch}></img><span>{this.props.itinerary.duration}hrs.</span></div>
                                 <div className="like__container"><img className="like__img" src={like}></img><span>{this.props.itinerary.rating}</span></div>
                                 <span>{this.props.itinerary.hashtag}</span>
