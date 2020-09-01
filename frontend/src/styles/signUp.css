@@ -1,0 +1,82 @@
+.container__signUp{
+    margin: 2vh 30vw 2vh 30vw;
+    border: 2px #000000 solid;
+    padding: 2rem;
+
+}
+
+ .container__signUp label{
+    font-size: 2em; 
+    padding: 1vh;
+    font-weight: bold;  
+    color: black;
+} 
+
+.title__signUp__signIn p{
+    text-align: center;
+    font-size: 4em;
+    padding: 1vw;
+    background-color: #EAB14D;
+}
+
+.form__signUp__father{
+    text-align: center;
+}
+
+.container__signUp.container-fluid input{
+    padding: 0em;
+}
+
+.container__signUp.container-fluid button{
+
+    margin: 1.5em;
+    
+
+}
+
+.input-field label {
+    color: #000;
+  }
+
+  .input-field input[type=text]:focus + label {
+    color: #000!important;
+  } 
+
+
+.button__signUp{
+    padding: 1.5rem 3rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: #EAB14D;
+    background-image: linear-gradient(to right, #070707 0%, #050505 100%) ;
+    text-decoration: none;
+    border-radius: .8rem;
+    text-decoration: none;
+}
+
+.container__signUp__more{
+    margin: 2vh 30vw 2vh 30vw;
+    border: 2px #000000 solid;
+    padding: 2rem;  
+    text-align: center;  
+}
+
+
+.container__signUp__more span{
+    font-size: 1.3em;
+}
+
+@media screen and (max-width: 768px){
+
+    .container__signUp__more{
+        margin: 2vh 10vw 2vh 10vw; 
+    }
+
+    .container__signUp{
+        margin: 2vh 10vw 2vh 10vw;
+        border: 2px #000000 solid;
+        padding: 2rem;
+    
+    }
+}

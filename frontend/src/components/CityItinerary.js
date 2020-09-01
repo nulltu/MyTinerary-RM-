@@ -49,7 +49,7 @@ class CityItinerary extends React.Component {
                      </div>
                             </>)
                         })}
-                        <div style={{ textAlign: 'center' }}><img style={{ width: '30vw' }} src={notAvailable} /></div>
+                        <div style={{ textAlign: 'center' }}><img style={{ width: '30vw' }} src={notAvailable} alt=""/></div>
                     </div>)
         
                     

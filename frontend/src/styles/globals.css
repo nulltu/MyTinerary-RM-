@@ -43,6 +43,12 @@ body{
     border-bottom: 1px solid #EAB14D!important;
     box-shadow: 0 1px 0 0 #EAB14D!important;
   }
+
+  .input-field input[type=password]:focus {
+    border-bottom: 1px solid #EAB14D!important;
+    box-shadow: 0 1px 0 0 #EAB14D!important;
+  }
+  
   /* valid color */
   .input-field input[type=text].valid {
     border-bottom: 1px solid #000;
@@ -59,21 +65,26 @@ body{
     color: whitesmoke!important;
   }
 
+  /* Firefox */
   ::placeholder {
     color: rgb(124, 123, 79)!important;
-    opacity: 1; /* Firefox */
-    font-size: calc(0.6em + 0.6vw)!important;
+    opacity: 0.5; 
+    /* font-size: calc(0.6em + 0.6vw)!important; */
   }
 
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+
+  /* Internet Explorer 10-11 */
+  /* :-ms-input-placeholder { 
     color: rgb(124, 123, 79)!important;
     font-size: calc(0.6em + 0.6vw)!important;
    }
-   
-   ::-ms-input-placeholder { /* Microsoft Edge */
+    */
+
+     /* Microsoft Edge */
+   /* ::-ms-input-placeholder {
     color:rgb(124, 123, 79)!important;
     font-size: calc(0.6em + 0.6vw)!important;
-   }
+   } */
 
 
    .material-icons.itinerary{

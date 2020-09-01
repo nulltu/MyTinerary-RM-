@@ -4,7 +4,7 @@ import "../styles/header.css";
 import imgProfile from '../images/profile.svg'
 import Message from "./Message";
 import { NavLink, Link } from "react-router-dom";
-import { Dropdown, Button, Icon, SideNav, SideNavItem, Navbar, NavItem, Divider } from 'react-materialize'
+import { Dropdown,Icon,Navbar, NavItem} from 'react-materialize'
 
 
 class Header extends React.Component {
@@ -68,8 +68,8 @@ render(){
             }}
             trigger={<a href="#!">{' '}<img className="img-profile" src={imgProfile} alt="img-profile"></img></a>}
           >
-            <NavLink to="">Login</NavLink>
-            <NavLink to="">Create account</NavLink>
+            <NavLink to="/signIn">Login</NavLink>
+            <NavLink to="/signUp">Create account</NavLink>
           </Dropdown>
         </Navbar>
         <Message />

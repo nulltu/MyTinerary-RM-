@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/message.css'
-import { NavLink, Link } from 'react-router-dom'
+import {Link } from 'react-router-dom'
 
 
 function Message() {

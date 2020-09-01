@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../components/Header'
 import City from '../components/City'
 import TheFooter from '../components/TheFooter'
 import { Row } from 'react-materialize'
@@ -44,9 +43,10 @@ class Cities extends React.Component {
             <>
                 <h1 style={{textAlign:'center', color:'#EAB14D', fontSize:'3em', fontWeight:'bold'}}>Cities</h1>
                 <Row className="container">
-                <div class="input-field center container" style={{width:'40vw'}}>
+                <div className="input-field center container" style={{width:'40vw'}}>
                      <input className="center imput-cities" type="text" data-length="10"  name="city" placeholder="What city are you looking for?" id="city" 
-                    onChange={this.capturarValor}/>      
+                    onChange={this.capturarValor}/> 
+                   
                 </div>
                 </Row>
                  <div className="row">

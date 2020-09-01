@@ -17,7 +17,7 @@ class Slide extends React.Component {
     return (
       <>
       <p className="text-message-two">Popular Mytineraries</p> 
-      <AliceCarousel autoPlay autoPlayInterval='4000'>
+      <AliceCarousel autoPlay autoPlayInterval={4000}>
         {this.state.cities.map(group => {
           return (
             <div key={Carousel} className="carousel-item center row card">

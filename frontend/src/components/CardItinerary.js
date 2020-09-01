@@ -25,11 +25,11 @@ class CardItinerary extends React.Component {
 
         function priceItinerary(price){
             switch(price){
-                case 1: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money}/></div> )
-                case 2: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money}/><img className="money__img" src={money}/></div>)
-                case 3: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money}/><img className="money__img" src={money}/><img className="money__img" src={money}/></div>)
-                case 4: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money}/><img className="money__img" src={money}/><img className="money__img" src={money}/><img className="money__img" src={money}/></div>)
-                case 5: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money}/><img className="money__img" src={money}/><img className="money__img" src={money}/><img className="money__img" src={money}/><img className="money__img" src={money}/></div>)
+                case 1: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money} alt=""/></div> )
+                case 2: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money} alt=""/><img className="money__img" src={money} alt=""/></div>)
+                case 3: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money} alt=""/><img className="money__img" src={money} alt=""/><img className="money__img" src={money}alt="" /></div>)
+                case 4: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money} alt=""/><img className="money__img" src={money} alt=""/><img className="money__img" src={money} alt=""/><img className="money__img" src={money} alt=""/></div>)
+                case 5: return(<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money} alt=""/><img className="money__img" src={money} alt=""/><img className="money__img" src={money} alt=""/><img className="money__img" src={money} alt=""/><img className="money__img" src={money} alt=""/></div>)
                 default: return('Not value')
             }   
         }
@@ -44,8 +44,8 @@ class CardItinerary extends React.Component {
                         <div className="itinerary__post__info"> 
                             <div className="itinerary__post__content">
                                 <span>{priceItinerary(this.props.itinerary.price)}</span>
-                                <div className="like__container"><img className="watch__img" src={watch}></img><span>{this.props.itinerary.duration}hrs.</span></div>
-                                <div className="like__container"><img className="like__img" src={like}></img><span>{this.props.itinerary.rating}</span></div>
+                                <div className="like__container"><img className="watch__img" src={watch} alt=""/><span>{this.props.itinerary.duration}hrs.</span></div>
+                                <div className="like__container"><img className="like__img" src={like}alt=""/><span>{this.props.itinerary.rating}</span></div>
                                 <span>{this.props.itinerary.hashtag}</span>
                             </div>
                             <h1 className="itinerary__post__title">{this.props.itinerary.title}</h1>

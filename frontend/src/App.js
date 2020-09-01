@@ -5,6 +5,8 @@ import 'materialize-css/dist/css/materialize.css'
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
 import Header from './components/Header'
 import CityItinerary from './components/CityItinerary'
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
 
 
 
@@ -15,13 +17,15 @@ class App extends React.Component{
 
     return (
     
-      <>
+      <>  
           <BrowserRouter>
           <Header />
           <Switch>
           <Route exact path='/' component={Home}/>
           <Route path='/cities' component={Cities}/>
           <Route path='/cityItinerary/:id' component={CityItinerary}/>
+          <Route path='/signIn' component={SignIn}/>
+          <Route path='/signUp' component={SignUp}/>
           <Redirect to='/'/>
           </Switch>
           </BrowserRouter>

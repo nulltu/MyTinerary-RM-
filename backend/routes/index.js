@@ -3,6 +3,7 @@ const router = express.Router()
 const cityController = require('../controllers/cityController')
 const itinieraryController =require('../controllers/itineraryController')
 const activityController = require('../controllers/activityController')
+const userController = require('../controllers/userController')
 
 
 router.route('/cities')
@@ -21,11 +22,15 @@ router.route('/cities/:id')
 
 
 router.route('/activities')
-.post(activityController.addActivity)
 .get(activityController.ListActivities)
+.post(activityController.addActivity)
 
 router.route('/activities/:id')
 .get(activityController.bringActivity)
+
+router.route('/signIn')
+.get(userController.listUsers)
+.post(userController.addUser)
 
 module.exports = router
 
