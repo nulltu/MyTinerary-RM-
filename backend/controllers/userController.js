@@ -10,7 +10,7 @@ const userController = {
     },
 
     addUser:(req, res)=>{
-        const {urlPhoto, username, firstName, lastName, email, password} = req.body
+        const {urlPhoto, username, firstName, lastName, email, countryOrigin, password} = req.body
 
         const newUser = new User({
             urlPhoto : urlPhoto,
@@ -18,6 +18,7 @@ const userController = {
             firstName:firstName,
             lastName:lastName,
             email:email,
+            countryOrigin:countryOrigin, 
             password:password
         })
 

@@ -4,12 +4,31 @@ import { TextInput } from 'react-materialize'
 import { Link } from 'react-router-dom'
 import TheFooter from '../components/TheFooter'
 import { useState } from 'react'
+import { useEffect } from 'react'
+import { Select,Icon } from 'react-materialize'
+
 
 function SignUp() {
 
     const [newUser, setNewUser] = useState({
-        picture: '', username:'', firstName: '', lastName:'', password: '', email:''
+        picture: '', username: '', firstName: '', lastName: '', password: '', countryOrigin: '', email: ''
     })
+
+    const [countries, setCountries] = useState([])
+
+
+
+    useEffect(() => {
+        getData()
+    }, [])
+
+
+    const getData = async () => {
+        const data = await fetch('https://restcountries.eu/rest/v2/all')
+        const countries = await data.json()
+        console.log(countries)
+        setCountries(countries)
+    }
 
     const readInput = e => {
         const textBox = e.target.name
@@ -22,9 +41,9 @@ function SignUp() {
 
     const sendInfo = e => {
         e.preventDefault()
-
         console.log(newUser)
     }
+
 
     return (
         <>
@@ -35,12 +54,47 @@ function SignUp() {
 
                 <label htmlFor="pic">Link Picture</label><TextInput onChange={readInput} type="text" name="picture" placeholder="for example: http://www.myphoto.image.jpg" />
                 <label htmlFor="">Username</label><TextInput onChange={readInput} type="text" name="username" id="" placeholder="for example: Jhon1010" />
-                <label htmlFor="">First Name</label><TextInput onChange={readInput} type="text" name="firstName" placeholder="Jhon" />
+                <label htmlFor="">First Name</label><TextInput onChange={readInput} type="text" name="firstName" placeholder="John" />
                 <label htmlFor="">Last Name</label><TextInput onChange={readInput} type="text" name="lastName" placeholder="Wick" />
                 <label htmlFor="">Email</label><TextInput onChange={readInput} type="text" name="email" id="" placeholder="for example: jhon@mytinerary.com" />
-                <label htmlFor="">Password</label><TextInput onChange={readInput} type="password" name="password" placeholder="Min 6 characters" />
 
+                <Select
+                    icon={<Icon>public</Icon>}
+                    name="countryOrigin"
+                    id="Select-9"
+                    multiple={false}
+                    onChange={readInput}
+                    options={{
+                        classes: '',
+                        dropdownOptions: {
+                            alignment: 'left',
+                            autoTrigger: true,
+                            closeOnClick: true,
+                            constrainWidth: true,
+                            coverTrigger: true,
+                            hover: false,
+                            inDuration: 150,
+                            onCloseEnd: null,
+                            onCloseStart: null,
+                            onOpenEnd: null,
+                            onOpenStart: null,
+                            outDuration: 250
+                        }
+                    }}
+                    value=""
+                >
+                    <option disabled value="" >Select</option>
+                    {countries.map(country => {
+                        return (<><option>{country.name}</option></>)
+                    })}
+                </Select>
+
+
+
+
+                <label htmlFor="">Password</label><TextInput onChange={readInput} type="password" name="password" placeholder="Min 6 characters" />
                 <button onClick={sendInfo} className="button__signUp">Create account</button>
+
             </div>
 
             <div className="container__signUp__more">
