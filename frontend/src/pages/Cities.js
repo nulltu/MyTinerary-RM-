@@ -9,39 +9,20 @@ import citiesActions from '../redux/actions/citiesActions'
 
 class Cities extends React.Component {
 
-    state = {
-        filteredCities:[]
-    }
-
-    //      componentDidMount() {   
-    //         this.props.getInfo()  
-    //         setTimeout(() => {
-    //             this.setState({ filteredCities: this.props.list.listCities 
-    //             }) 
-    //             console.log(this.state.filteredCities)   
-    //         }, 3000);  
-    //  }
-
+ 
             componentDidMount() {   
             this.props.getInfo()  
-            setTimeout(() => {
-                this.setState({ filteredCities: this.props.list.listCities 
-                }) 
-            }, 2000)  
-     }
+        }
 
            capturarValor= e =>{
-               //tomo el value del input
             const valorBuscado = e.target.value
-            //creo una constante y hago un filter del array cities
-            const filterCities = this.props.list.listCities.filter(city =>city.name.trim().toLowerCase().indexOf(valorBuscado.trim().toLowerCase())===0)
-            this.setState({
-                filteredCities: filterCities
-            })
+            this.props.citiesFiltered(valorBuscado)
+
          }
             
         render() {
-            // console.log(this.props.list.listCities)
+             console.log(this.props.cities)
+             console.log( this.props.filteredCities)
         return (
             <>
                 <h1 style={{textAlign:'center', color:'#EAB14D', fontSize:'3em', fontWeight:'bold'}}>Cities</h1>
@@ -53,7 +34,7 @@ class Cities extends React.Component {
                 </div>
                 </Row>
                  <div className="row">
-                            {this.state.filteredCities.map(city=>{
+                            {this.props.filteredCities.map(city=>{
                                 return (
                                 <>
                                 <City city={city}/>
@@ -71,12 +52,15 @@ class Cities extends React.Component {
 
 const mapStateToProps = state =>{
     return{
-        list:state.cities
+        cities:state.cities.listCities,
+        filteredCities: state.cities.filteredCities
     }
 }
 
 const mapDispatchToProps = {
-    getInfo: citiesActions.getInfo
+    getInfo: citiesActions.getInfo,
+    citiesFiltered:citiesActions.citiesFiltered
+    
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cities)

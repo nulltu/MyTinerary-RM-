@@ -4,6 +4,7 @@ import watch from '../images/watch.svg'
 import money from '../images/money.svg'
 import { Link } from 'react-router-dom'
 import '../styles/card.css'
+import Activities from './activities'
 
 
 class CardItinerary extends React.Component {
@@ -56,7 +57,7 @@ class CardItinerary extends React.Component {
                
                             {this.state.viewMore
                                 ? (<div>
-                                    <h1>Soy la descripción o lo que haya que mostrar</h1>
+                                    <Activities></Activities>
                                 </div>)
                                 : null
                             }

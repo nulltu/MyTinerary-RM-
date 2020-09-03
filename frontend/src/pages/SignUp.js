@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import TheFooter from '../components/TheFooter'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { Select,Icon } from 'react-materialize'
+import { Select,Switch} from 'react-materialize'
 
 
 function SignUp() {
@@ -29,6 +29,7 @@ function SignUp() {
         console.log(countries)
         setCountries(countries)
     }
+
 
     const readInput = e => {
         const textBox = e.target.name
@@ -56,10 +57,11 @@ function SignUp() {
                 <label htmlFor="">Username</label><TextInput onChange={readInput} type="text" name="username" id="" placeholder="for example: Jhon1010" />
                 <label htmlFor="">First Name</label><TextInput onChange={readInput} type="text" name="firstName" placeholder="John" />
                 <label htmlFor="">Last Name</label><TextInput onChange={readInput} type="text" name="lastName" placeholder="Wick" />
-                <label htmlFor="">Email</label><TextInput onChange={readInput} type="text" name="email" id="" placeholder="for example: jhon@mytinerary.com" />
+                <label htmlFor="">Email</label><TextInput email onChange={readInput} type="text" name="email" id="" placeholder="for example: jhon@mytinerary.com"  validate/>
 
+                
                 <Select
-                    icon={<Icon>public</Icon>}
+                    className="select"
                     name="countryOrigin"
                     id="Select-9"
                     multiple={false}
@@ -83,7 +85,7 @@ function SignUp() {
                     }}
                     value=""
                 >
-                    <option disabled value="" >Select</option>
+                    <option disabled value="" >Select a country of origin</option>
                     {countries.map(country => {
                         return (<><option>{country.name}</option></>)
                     })}
@@ -93,7 +95,8 @@ function SignUp() {
 
 
                 <label htmlFor="">Password</label><TextInput onChange={readInput} type="password" name="password" placeholder="Min 6 characters" />
-                <button onClick={sendInfo} className="button__signUp">Create account</button>
+                <div style={{textAlign:'center'}}><button onClick={sendInfo} className="button__signUp">Create account</button></div>
+              
 
             </div>
 

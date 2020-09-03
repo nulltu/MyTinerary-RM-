@@ -11,10 +11,10 @@ const activityController={
     },
 
     addActivity:(req, res)=>{
-        const {name, photo, itineraryId} = req.body
+        const {activity, photo, itineraryId} = req.body
 
         const newActivity = new Activity({
-            name:name,
+            activity:activity,
             photo:photo,
             itineraryId, itineraryId
         })

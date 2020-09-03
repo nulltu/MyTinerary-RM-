@@ -28,7 +28,7 @@ router.route('/activities')
 router.route('/activities/:id')
 .get(activityController.bringActivity)
 
-router.route('/signIn')
+router.route('/signUp')
 .get(userController.listUsers)
 .post(userController.addUser)
 
