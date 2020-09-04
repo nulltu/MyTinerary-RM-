@@ -4,48 +4,42 @@ import TheFooter from '../components/TheFooter'
 import { Link } from 'react-router-dom'
 import notAvailable from '../images/Not Available.svg'
 import CardItinerary from './CardItinerary'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import citiesActions from '../redux/actions/citiesActions'
+import itinerariesActions from '../redux/actions/itinerariesActions'
 
 
 class CityItinerary extends React.Component {
 
-    state = {
-        itineraries: null,
-    }
 
     async componentDidMount() {
-        const idSearch = (this.props.match.params.id)
 
-        const responseApi = await fetch(`http://127.0.0.1:5000/api/cityItinerary/${idSearch}`)
-        const infoApi = await responseApi.json()
-        const dataItineraries = infoApi.Itinerary
-
+        this.props.allItineraries()
         this.props.getInfo()
-        this.setState({
-            itineraries: dataItineraries
-        })
     }
 
     render() {
 
+        console.log(this.props.itineraries)
 
-        if (this.state.itineraries === null) {
+        if (this.props.itineraries === null) {
             return (
                 <div className="progress">
                     <div className="indeterminate"></div>
                 </div>
             )
         }
-       
+
         const idSearch = (this.props.match.params.id)
-        const filterCityId = this.props.cities.filter(city => city._id === idSearch) 
-      
+        const filterCityId = this.props.cities.filter(city => city._id === idSearch)
+        const filterItinerary = this.props.itineraries.filter(itinerary => itinerary.cityId === idSearch)
+        console.log(filterItinerary)
+
         return (
             <>
 
                 <h2 style={{ textAlign: 'center', fontSize: '4em', backgroundColor: '#EAB14D', margin: '0px', padding: '0.5em', color: 'whitesmoke', fontWeight: 'bold' }}>Itineraries</h2>
-                {this.state.itineraries.length === 0
+                {this.props.itineraries.length === 0
                     ? (
                         <div>
                             {filterCityId.map(city => {
@@ -57,8 +51,6 @@ class CityItinerary extends React.Component {
                             })}
                             <div style={{ textAlign: 'center' }}><img style={{ width: '30vw' }} src={notAvailable} alt="" /></div>
                         </div>)
-
-
                     :
                     filterCityId.map(city => {
                         return (
@@ -69,8 +61,8 @@ class CityItinerary extends React.Component {
                     })
                 }
 
-                {this.state.itineraries.map(itinerary => {
-                    return <CardItinerary itinerary={itinerary} />
+                {filterItinerary.map(item => {
+                    return <CardItinerary itinerary={item} />
                 })}
                 <div className="center" style={{ marginTop: '3em' }}>
                     <Link to="/cities"><i class="large material-icons itinerary">arrow_back</i></Link>
@@ -81,14 +73,16 @@ class CityItinerary extends React.Component {
     }
 }
 
-const mapStateToProps = state =>{
-    return{
-        cities:state.cities.listCities,
+const mapStateToProps = state => {
+    return {
+        cities: state.cities.listCities,
+        itineraries: state.itineraries.listItineraries
     }
 }
 
 const mapDispatchToProps = {
-    getInfo: citiesActions.getInfo
+    getInfo: citiesActions.getInfo,
+    allItineraries: itinerariesActions.allItineraries
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (CityItinerary)
+export default connect(mapStateToProps, mapDispatchToProps)(CityItinerary)

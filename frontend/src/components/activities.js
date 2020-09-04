@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {connect} from 'react-redux'
 import activitiesActions from '../redux/actions/activitiesActions'
+import itinerariesActions from '../redux/actions/itinerariesActions'
 
 
 const Activities = (props) =>{
@@ -8,10 +9,13 @@ const Activities = (props) =>{
 
     useEffect(() => {
         props.allActivities()
+        props.allItineraries()
 
     }, [])
 
-   
+    
+
+//    console.log(props.itineraries)
     return(
         <> 
             <h1>Hola, soy las activities</h1>
@@ -35,12 +39,14 @@ const Activities = (props) =>{
 
 const mapStateToProps = state =>{
     return{
-        activities: state.activities.listActivities
+        activities: state.activities.listActivities,
+        itineraries: state.itineraries.listItineraries
     }
 }
 
 const mapDispatchToProps = {
-    allActivities: activitiesActions.allActivities
+    allActivities: activitiesActions.allActivities,
+    allItineraries: itinerariesActions.allItineraries
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Activities)

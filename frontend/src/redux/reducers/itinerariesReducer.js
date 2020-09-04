@@ -1,7 +1,6 @@
 const initialState =  {
-    listItineraries: [],
+    listItineraries: null,
 }
-
 
 const itinerariesReducer = (state = initialState, action)=>{
     switch(action.type){
