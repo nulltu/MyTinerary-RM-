@@ -1,4 +1,4 @@
-.link__nav{
+/* .link__nav{
     font-size: 1.6em;
 }
 
@@ -60,4 +60,35 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+  } */
+
+
+  .nav__performance{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2em;
   }
+
+  .nav__performance img{
+      width: 20em;
+      padding: 3em;
+      margin-right: 4em;
+  }
+
+  .nav__performance ul a{
+    padding: 1.5em;
+    font-size: 2rem;
+    color: #2F8F58;
+  }
+
+  .img__profile{
+    width:8em!important;
+    padding: 0px!important;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+   
+    color: #2F8F58!important;
+    font-size: 1.4em;
+  
+}

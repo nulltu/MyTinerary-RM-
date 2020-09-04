@@ -3,11 +3,8 @@ import { Col, CardTitle, Card } from 'react-materialize'
 import {Link } from 'react-router-dom'
 
 
-
-
 class City extends React.Component {
     render() {
-        // console.log(this.props)
         return (
             <>
 
@@ -17,7 +14,7 @@ class City extends React.Component {
                         m={6}
                         s={12}
                     >
-                        <Card className="card-cities-page container-fluid"
+                        <Card
                             header={<CardTitle image={this.props.city.photo}>{this.props.city.name + ", " + this.props.city.country}</CardTitle>}
                         >
                         </Card>

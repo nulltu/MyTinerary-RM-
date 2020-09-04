@@ -4,7 +4,7 @@ import "../styles/header.css";
 import imgProfile from '../images/profile.svg'
 import Message from "./Message";
 import { NavLink, Link } from "react-router-dom";
-import { Dropdown,Icon,Navbar, NavItem} from 'react-materialize'
+import { Dropdown,Icon,Navbar, NavItem, Button, Divider} from 'react-materialize'
 
 
 class Header extends React.Component {
@@ -22,7 +22,51 @@ class Header extends React.Component {
 render(){
   return (
     <>
-      <div className="container-message container-fluid">
+      <div className="nav__performance">
+      <div>
+        <img src={logo} alt=""/>
+      </div>
+        <ul>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/cities">Cities</NavLink>
+          <NavLink to="/signIn">SignIn</NavLink>
+          <NavLink to="/signUp">SignUp</NavLink>
+          <Dropdown
+  id="Dropdown_6"
+  options={{
+    alignment: 'left',
+    autoTrigger: true,
+    closeOnClick: true,
+    constrainWidth: true,
+    container: null,
+    coverTrigger: false,
+    hover: false,
+    inDuration: 150,
+    onCloseEnd: null,
+    onCloseStart: null,
+    onOpenEnd: null,
+    onOpenStart: null,
+    outDuration: 250
+  }}
+  trigger={<img className="img__profile" src={imgProfile} alt=""/>}
+>
+  <NavLink to="/SignIn">
+    Login
+  </NavLink>
+  <NavLink to="/signUp">
+    Create Acoount
+  </NavLink>
+  <Divider />
+
+</Dropdown>
+        </ul>
+
+ 
+        
+      </div>
+
+
+      {/* <div className="container-message container-fluid">
         <Navbar className="nav-principal"
           alignLinks="right"
           brand={<Link className="brand-logo" to="/"><img className="logo-principal brand-logo" src={logo} alt="img-logo" /></Link>}
@@ -73,7 +117,7 @@ render(){
           </Dropdown>
         </Navbar>
         <Message />
-      </div>
+      </div> */}
     </>
   )
 }

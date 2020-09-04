@@ -9,13 +9,14 @@
     font-size: 2em; 
     padding: 1vh;
     font-weight: bold;  
-    color: black;
+    color: #2F8F58;
 } 
 
 .title__signUp__signIn p{
     text-align: center;
     font-size: 4em;
     padding: 1vw;
+    color: #2F8F58;
     background-color: #EAB14D;
 }
 

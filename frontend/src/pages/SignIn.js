@@ -23,7 +23,6 @@ class SingIn extends React.Component {
     sendInfo = e => {
         e.preventDefault()
         const userLogin = { user: this.state.user, password: this.state.password }
-        console.log(userLogin)
     }
 
     render() {

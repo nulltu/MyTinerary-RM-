@@ -91,3 +91,18 @@ body{
      color:#EAB14D;
      
    }
+
+   .card-cities-page.container-fluid{
+    padding: 1em;
+    height: 35vh;
+   }
+
+
+
+.progress{
+  background-color: whitesmoke!important;
+}
+ .indeterminate {
+
+    background-color: #EAB14D!important;
+}

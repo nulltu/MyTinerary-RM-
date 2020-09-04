@@ -15,7 +15,11 @@
     font-size: 2em; 
     padding: 1vh;
     font-weight: bold;  
-    color: black;
+    color: #2F8F58;
+}
+
+.container__signIn a{
+    color: #EAB14D ;
 }
 
 .button__signIn{

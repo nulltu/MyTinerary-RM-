@@ -21,8 +21,6 @@ class Cities extends React.Component {
          }
             
         render() {
-             console.log(this.props.cities)
-             console.log( this.props.filteredCities)
         return (
             <>
                 <h1 style={{textAlign:'center', color:'#EAB14D', fontSize:'3em', fontWeight:'bold'}}>Cities</h1>

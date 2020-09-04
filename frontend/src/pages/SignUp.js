@@ -26,7 +26,6 @@ function SignUp() {
     const getData = async () => {
         const data = await fetch('https://restcountries.eu/rest/v2/all')
         const countries = await data.json()
-        console.log(countries)
         setCountries(countries)
     }
 
@@ -42,7 +41,6 @@ function SignUp() {
 
     const sendInfo = e => {
         e.preventDefault()
-        console.log(newUser)
     }
 
 
