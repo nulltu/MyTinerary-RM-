@@ -1,39 +1,29 @@
-import React from 'react'
-import { useState } from 'react'
-import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import {connect} from 'react-redux'
+import activitiesActions from '../redux/actions/activitiesActions'
 
-const Activities = () =>{
 
-    const [activity, setActivity] = useState([])  
+const Activities = (props) =>{
+
 
     useEffect(() => {
-        getData()
+        props.allActivities()
+
     }, [])
 
-    const getData = async ()=>{
-
-        const data = await fetch('http://127.0.0.1:5000/api/activities')
-        const infoActivity = await data.json()
-        const dataActivity = infoActivity.Activity
-        setActivity(dataActivity)    
-    }
-
-    let {id} = useParams()
-
+   
     return(
         <> 
             <h1>Hola, soy las activities</h1>
 
-            {activity.map(item=>{
+            {props.activities.map(item=>{
                 return(
                     <>
                     <div style={{backgroundColor:'black'}}>
                     <p>{item.activity}</p>
                     <img src={item.photo} alt=""/>
                     </div>
-                <h3>{id}</h3>
-                    
+                
                     </>
                 )
             })}
@@ -42,4 +32,15 @@ const Activities = () =>{
     )
 }
 
-export default Activities
+
+const mapStateToProps = state =>{
+    return{
+        activities: state.activities.listActivities
+    }
+}
+
+const mapDispatchToProps = {
+    allActivities: activitiesActions.allActivities
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Activities)

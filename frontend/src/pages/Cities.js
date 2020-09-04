@@ -21,6 +21,14 @@ class Cities extends React.Component {
          }
             
         render() {
+
+            if (this.props.filteredCities === null) {
+                return (
+                    <div className="progress">
+                        <div className="indeterminate"></div>
+                    </div>
+                )
+            }
         return (
             <>
                 <h1 style={{textAlign:'center', color:'#EAB14D', fontSize:'3em', fontWeight:'bold'}}>Cities</h1>

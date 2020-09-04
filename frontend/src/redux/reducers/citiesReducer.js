@@ -1,6 +1,6 @@
 const initialState =  {
     listCities: [],
-    filteredCities: []
+    filteredCities: null
 }
 
 const  citiesReducer = (state = initialState, action)=>{
