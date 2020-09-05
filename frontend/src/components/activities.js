@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect } from 'react';
 import {connect} from 'react-redux'
 import activitiesActions from '../redux/actions/activitiesActions'
 import itinerariesActions from '../redux/actions/itinerariesActions'

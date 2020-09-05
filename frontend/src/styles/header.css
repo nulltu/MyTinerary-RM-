@@ -1,94 +1,44 @@
-/* .link__nav{
-    font-size: 1.6em;
+
+nav{
+    background-color:rgba(245, 245, 245,0.0002);
+    height: 10vh;
 }
 
-.nav-principal{
-    background-color: rgba(234, 177, 77,0.002)!important;
+.brand-logo img{
+    width: 7em!important;
+    padding: 0.5em;
 }
 
-.right.hide-on-med-and-down{
-    margin-right: 6em;
-    margin-top: 3.5em;
+.navLink__header{
+    margin-top: 1em;
+    color: #334780; 
+    font-size: 1.8em;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navLink__header:hover{
+    background-color: rgba(238, 130, 238, 0.00002);
+    color: #EAB14D;
+}
+
+.img__profile{
+    width: 6em;
+    margin-right: 20.5em;
 }
 
 .z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
     box-shadow: none!important;
 }
 
-.logo-principal.brand-logo{
-    width: 14em;
-    padding: 1em;
-    margin-left: 4vw;
+.icon__menu{
+    color:#EAB14D;
 }
 
-.icon-menu{
-    color: #EAB14D!important;
+
+@media screen and (max-width: 768px){
+.img__profile{
+    width: 6em;
+    margin-right: 5.5em;
 }
-
-.img-profile{
-    margin-top: -1em;
-    width:4vw;
-    padding: 0px;
-}
-
-.img-profile-ref{
-    padding: 1.5em 1.5em 1.5em 1.5em;
-    margin-top: -0.5em;
-}
-
-.img-profile-ref:hover{
-    background-color: rgba(252, 252, 252,0.001);
-}
-
-.dropdown-content li > a, .dropdown-content li > span {
-   
-    color: #5f3e04!important;
-  
-}
-
-.sidenav {
-    background-color: #EAB14D!important;
-}
-
-.container-message{
-    background-image: url('../images/hero.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-    width: 100%;
-    background-size: cover;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  } */
-
-
-  .nav__performance{
-      display: flex;
-      justify-content: space-between;
-      margin-top: 2em;
-  }
-
-  .nav__performance img{
-      width: 20em;
-      padding: 3em;
-      margin-right: 4em;
-  }
-
-  .nav__performance ul a{
-    padding: 1.5em;
-    font-size: 2rem;
-    color: #2F8F58;
-  }
-
-  .img__profile{
-    width:8em!important;
-    padding: 0px!important;
-}
-
-.dropdown-content li > a, .dropdown-content li > span {
-   
-    color: #2F8F58!important;
-    font-size: 1.4em;
-  
 }

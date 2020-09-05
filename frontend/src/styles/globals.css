@@ -7,7 +7,8 @@
 }
 
 html{
-  background-color: whitesmoke;
+  background-color: #FAFAF8;
+
 
 }
 body{
@@ -67,8 +68,9 @@ body{
 
   /* Firefox */
   ::placeholder {
-    color: rgb(124, 123, 79)!important;
+    color: #334780!important;
     opacity: 0.5; 
+    font-size: 0.9em;
     /* font-size: calc(0.6em + 0.6vw)!important; */
   }
 
@@ -105,4 +107,22 @@ body{
  .indeterminate {
 
     background-color: #EAB14D!important;
+}
+
+.country__itinerary{
+  height: 45vh;
+  background-position: center;
+  background-size: cover;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px){
+
+  .country__itinerary{
+    height: 20vh;
+  }
 }

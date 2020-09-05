@@ -1,6 +1,5 @@
 
 import React from 'react'
-import TheFooter from '../components/TheFooter'
 import { Link } from 'react-router-dom'
 import notAvailable from '../images/Not Available.svg'
 import CardItinerary from './CardItinerary'
@@ -38,13 +37,12 @@ class CityItinerary extends React.Component {
         return (
             <>
 
-                <h2 style={{ textAlign: 'center', fontSize: '4em', backgroundColor: '#EAB14D', margin: '0px', padding: '0.5em', color: 'whitesmoke', fontWeight: 'bold' }}>Itineraries</h2>
                 {this.props.itineraries.length === 0
                     ? (
                         <div>
                             {filterCityId.map(city => {
                                 return (<>
-                                    <div style={{ backgroundImage: `url(${city.photo})`, height: '50vh', backgroundPosition: 'center', margin: '0px', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+                                    <div style={{ backgroundImage: `url(${city.photo})`, height: '50vh', backgroundPosition: 'center', margin: '0px', display: 'flex', justifyContent: 'center', flexDirection: 'column'  }}>
                                         <h1 style={{ color: 'whitesmoke', textAlign: 'center', backgroundColor: 'rgba(245, 245, 245,0.5)', fontWeight: '1000', WebkitTextStroke: '1.5px black' }}>{city.name}, {city.country}</h1>
                                     </div>
                                 </>)
@@ -54,7 +52,7 @@ class CityItinerary extends React.Component {
                     :
                     filterCityId.map(city => {
                         return (
-                            <div style={{ backgroundImage: `url(${city.photo})`, height: '50vh', backgroundPosition: 'center', margin: '0px', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+                            <div className="country__itinerary" style={{ backgroundImage: `url(${city.photo})`}}>
                                 <h1 style={{ color: 'whitesmoke', textAlign: 'center', backgroundColor: 'rgba(245, 245, 245,0.5)', fontWeight: '1000', WebkitTextStroke: '1.5px black' }}>{city.name}, {city.country}</h1>
                             </div>
                         )
@@ -67,7 +65,7 @@ class CityItinerary extends React.Component {
                 <div className="center" style={{ marginTop: '3em' }}>
                     <Link to="/cities"><i class="large material-icons itinerary">arrow_back</i></Link>
                 </div>
-                <TheFooter />s
+
             </>
         )
     }

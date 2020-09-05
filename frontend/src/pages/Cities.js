@@ -1,6 +1,5 @@
 import React from 'react'
 import City from '../components/City'
-import TheFooter from '../components/TheFooter'
 import { Row } from 'react-materialize'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
@@ -50,7 +49,7 @@ class Cities extends React.Component {
                 <div className="center" style={{marginTop:'3em'}}>
                         <Link to="/"><i class="large material-icons itinerary">arrow_back</i></Link>
                 </div>                                     
-                <TheFooter />
+                
             </>
         )
     }
