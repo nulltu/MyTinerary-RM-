@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { Select} from 'react-materialize'
+import userActions from '../redux/actions/userActions'
+import {connect} from 'react-redux'
 
 
-function SignUp() {
+function SignUp(props) {
 
     const [newUser, setNewUser] = useState({
-        picture: '', username: '', firstName: '', lastName: '', password: '', countryOrigin: '', email: ''
+        urlPhoto: '', username: '', firstName: '', lastName: '', password: '', countryOrigin: '', email: ''
     })
 
     const [countries, setCountries] = useState([])
@@ -37,8 +39,10 @@ function SignUp() {
 
     const sendInfo = e => {
         e.preventDefault()
+        props.createAccount(newUser)
     }
 
+    
 
     return (
         <>  
@@ -47,7 +51,7 @@ function SignUp() {
                 </div>
             <div className="container__signUp">
                 <p>Create your account</p>
-                <label htmlFor="pic">Link Picture</label><TextInput onChange={readInput} type="text" name="picture" placeholder="for example: http://www.myphoto.image.jpg" />
+                <label htmlFor="pic">Link urlPhoto</label><TextInput onChange={readInput} type="text" name="urlPhoto" placeholder="for example: http://www.myphoto.image.jpg" />
                 <label htmlFor="">Username</label><TextInput onChange={readInput} type="text" name="username" id="" placeholder="for example: Jhon1010" />
                 <label htmlFor="">First Name</label><TextInput onChange={readInput} type="text" name="firstName" placeholder="John" />
                 <label htmlFor="">Last Name</label><TextInput onChange={readInput} type="text" name="lastName" placeholder="Wick" />
@@ -102,4 +106,8 @@ function SignUp() {
     )
 }
 
-export default SignUp
+const mapDispatchToProps = {
+    createAccount : userActions.createAccount
+}
+
+export default connect(null, mapDispatchToProps) (SignUp)

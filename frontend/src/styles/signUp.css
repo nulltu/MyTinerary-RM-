@@ -7,7 +7,7 @@
 }
 .container__signUp{
     border: 5px solid whitesmoke;
-    width: 40%;
+    width: 60%;
     padding: 3em;
     margin: 4em;
     background-color: #FDB94C;
@@ -22,12 +22,12 @@
 }
 
 .text__container__signUp{
-    width: 40%;
+    width: 30%;
     background-image: url('../images/banner.jpg');
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    background-size: 120vh;
+    background-size: 100vh;
     border-radius: 20px;
 }
 

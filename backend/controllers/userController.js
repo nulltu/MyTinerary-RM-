@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const bcryptjs = require('bcryptjs')
 
 const userController = {
     listUsers : async(req, res)=>{
@@ -9,18 +10,22 @@ const userController = {
         })
     },
 
-    addUser:(req, res)=>{
+    addUser: async(req, res)=>{
         const {urlPhoto, username, firstName, lastName, email, countryOrigin, password} = req.body
-
-        const newUser = new User({
-            urlPhoto : urlPhoto,
-            username:username,
-            firstName:firstName,
-            lastName:lastName,
-            email:email,
-            countryOrigin:countryOrigin, 
-            password:password
-        })
+        const  passHash = bcryptjs.hashSync(password, 10)
+        const userExists = await User.findOne({username:username})
+        if(userExists){
+            res.json({
+                success: false, error: "Username in use, Choose another username."
+            })
+        } else{
+             const newUser = new User({
+                 urlPhoto, username, firstName, lastName, email, countryOrigin, password: passHash
+             })
+             var user = await newUser.save()
+             res.json({success:true, user})
+        }
+        
 
         newUser.save() 
         .then(user=>{
