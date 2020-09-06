@@ -2,6 +2,7 @@ import React from 'react'
 import { TextInput } from 'react-materialize'
 import '../styles/signIn.css'
 import { Link } from 'react-router-dom'
+import Footer from '../components/Footer'
 
 
 class SingIn extends React.Component {
@@ -45,6 +46,8 @@ class SingIn extends React.Component {
                 <div className="center" style={{ marginTop: '3em' }}>
                     <Link to="/"><i class="large material-icons itinerary">home</i></Link>
                 </div>
+
+                <Footer />
             </>
         )
     }

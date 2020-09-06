@@ -4,6 +4,7 @@ import { Row } from 'react-materialize'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import citiesActions from '../redux/actions/citiesActions'
+import Footer from '../components/Footer'
 
 
 class Cities extends React.Component {
@@ -49,7 +50,7 @@ class Cities extends React.Component {
                 <div className="center" style={{marginTop:'3em'}}>
                         <Link to="/"><i class="large material-icons itinerary">arrow_back</i></Link>
                 </div>                                     
-                
+                <Footer />
             </>
         )
     }

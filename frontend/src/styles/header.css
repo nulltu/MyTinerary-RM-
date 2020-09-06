@@ -43,12 +43,12 @@ nav{
 
 @media screen and (max-width: 768px){
     .img__profile{
-    width: 8em;
+    width: 6em;
     margin-right: 5.5em;
     }
 
     .brand-logo img{
-    width: 6.5em!important;
+    width: 6em!important;
     padding: 0.5em;
     }
 

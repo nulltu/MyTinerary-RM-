@@ -6,6 +6,7 @@ import CardItinerary from './CardItinerary'
 import { connect } from 'react-redux'
 import citiesActions from '../redux/actions/citiesActions'
 import itinerariesActions from '../redux/actions/itinerariesActions'
+import Footer from './Footer'
 
 
 class CityItinerary extends React.Component {
@@ -19,7 +20,7 @@ class CityItinerary extends React.Component {
 
     render() {
 
-        console.log(this.props.itineraries)
+        // console.log(this.props.itineraries)
 
         if (this.props.itineraries === null) {
             return (
@@ -37,7 +38,9 @@ class CityItinerary extends React.Component {
         return (
             <>
 
-                {this.props.itineraries.length === 0
+            
+
+                {filterItinerary.length === 0
                     ? (
                         <div>
                             {filterCityId.map(city => {
@@ -47,7 +50,7 @@ class CityItinerary extends React.Component {
                                     </div>
                                 </>)
                             })}
-                            <div style={{ textAlign: 'center' }}><img style={{ width: '30vw' }} src={notAvailable} alt="" /></div>
+                            <div style={{ textAlign: 'center' }}><img className="img__notAvailable" src={notAvailable} alt="" /></div>
                         </div>)
                     :
                     filterCityId.map(city => {
@@ -65,7 +68,7 @@ class CityItinerary extends React.Component {
                 <div className="center" style={{ marginTop: '3em' }}>
                     <Link to="/cities"><i class="large material-icons itinerary">arrow_back</i></Link>
                 </div>
-
+                <Footer />
             </>
         )
     }

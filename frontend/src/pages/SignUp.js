@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { Select} from 'react-materialize'
 import userActions from '../redux/actions/userActions'
 import {connect} from 'react-redux'
+import Footer from '../components/Footer'
 
 
 function SignUp(props) {
@@ -100,7 +101,8 @@ function SignUp(props) {
             <div className="center" style={{ marginTop: '3em' }}>
                 <Link to="/"><i class="large material-icons itinerary">home</i></Link>
             </div>
-
+            
+            <Footer />
        
         </>
     )

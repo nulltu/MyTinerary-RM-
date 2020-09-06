@@ -2,6 +2,7 @@ import React from 'react'
 import Slider from '../components/Slide'
 import '../styles/home.css'
 import {Link} from 'react-router-dom'
+import Footer from '../components/Footer'
 
 
 
@@ -42,7 +43,7 @@ render(){
       </div>
     </div>
     <Slider/>
-    
+    <Footer />
     </>  
 
     )

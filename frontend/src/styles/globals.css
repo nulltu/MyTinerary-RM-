@@ -120,9 +120,19 @@ body{
   width: 100%;
 }
 
+.img__notAvailable{
+  width: 30vw;
+}
+
 @media screen and (max-width: 768px){
 
   .country__itinerary{
     height: 20vh;
   }
+
+  .img__notAvailable{
+    width: 70vw;
+  }
+
+
 }

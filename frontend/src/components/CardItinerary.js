@@ -4,7 +4,7 @@ import watch from '../images/watch.svg'
 import money from '../images/money.svg'
 import { Link } from 'react-router-dom'
 import '../styles/card.css'
-import Activities from './activities'
+import Activities from './Activities'
 
 
 class CardItinerary extends React.Component {
