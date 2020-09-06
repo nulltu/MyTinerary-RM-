@@ -5,12 +5,15 @@ import money from '../images/money.svg'
 import { Link } from 'react-router-dom'
 import '../styles/card.css'
 import Activities from './Activities'
+// import itinerariesActions from '../redux/actions/itinerariesActions'
 
 
 class CardItinerary extends React.Component {
 
     state = {
-        viewMore: false
+        viewMore: false,
+        iData: []
+
     }
 
     changeState = () => {
@@ -19,8 +22,10 @@ class CardItinerary extends React.Component {
         })
     }
 
-    render() {
 
+
+    render() {
+        
         function priceItinerary(price) {
             switch (price) {
                 case 1: return (<div className="like__container"><p className="price__text">Price:</p><img className="money__img" src={money} alt="" /></div>)
@@ -54,7 +59,7 @@ class CardItinerary extends React.Component {
 
                     {this.state.viewMore
                         ? (<div>
-                            <Activities></Activities>
+                            <Activities itinerary = {this.props.itinerary}></Activities>
                         </div>)
                         : null
                     }

@@ -17,7 +17,7 @@ const Footer = () => {
                 </div>
               <div style={{display:"flex", alignContent:'space-around'}}>
               <div className="icons__footer">
-                        <Link to="/" target="_blank"><img src={instagram} /></Link>
+                        <Link to="/" target="_blank"><img src={instagram} alt="" /></Link>
                         <Link to="/" target="_blank"><img  id="icon__facebook"src={facebook} alt="" /></Link>
                         <Link to="/" target="_blank"><img src={airbnb} alt="" /></Link>
                     </div>

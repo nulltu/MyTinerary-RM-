@@ -21,7 +21,7 @@
 
 .icons__footer a img{
     width: 2em;
-    margin-right: 5.2em;
+    margin-right: 3em;
 }
 
 #icon__facebook{
@@ -32,4 +32,22 @@
     display: flex;
     flex-direction: column;
     margin-right: 10em;
+}
+
+@media screen and (max-width: 768px){
+
+    .logo__footer{
+        width: 9em;
+        margin-left: 15rem;
+    }
+
+    .footer__app{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0em;
+        padding: 1em;
+        background-color: #EAB14D;
+    }
+    
+    
 }

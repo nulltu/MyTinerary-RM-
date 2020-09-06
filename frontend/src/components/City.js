@@ -10,8 +10,8 @@ class City extends React.Component {
 
                 <Link to={`./cityItinerary/${this.props.city._id}`}>
                     <Col
-                        l={3}
-                        m={6}
+                        l={4}
+                        m={4}
                         s={12}
                     >
                         <Card

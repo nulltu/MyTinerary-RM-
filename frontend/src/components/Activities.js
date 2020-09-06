@@ -1,52 +1,50 @@
-import React, {useEffect } from 'react';
-import {connect} from 'react-redux'
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux'
 import activitiesActions from '../redux/actions/activitiesActions'
-import itinerariesActions from '../redux/actions/itinerariesActions'
+import '../styles/activities.css'
 
 
-const Activities = (props) =>{
+
+
+const Activities = (props) => {
 
 
     useEffect(() => {
         props.allActivities()
-        props.allItineraries()
 
     }, [])
 
-    
+    const filterActivity = props.activities.filter(activity => activity.itineraryId === props.itinerary._id)
+    console.log(filterActivity)
 
-//    console.log(props.itineraries)
-    return(
-        <> 
-            <h1>Hola, soy las activities</h1>
-
-            {props.activities.map(item=>{
-                return(
-                    <>
-                    <div style={{backgroundColor:'black'}}>
-                    <p>{item.activity}</p>
-                    <img src={item.photo} alt=""/>
-                    </div>
-                
+    return (
+        <>
+        {filterActivity.length === 0
+        ? (<div><p>No hay nada</p></div>)
+        :
+            <div className="container__activity">
+        {filterActivity.map(activity => {
+                return (
+                    <> 
+                        <div className="img__activiy" style={{backgroundImage:`url(${activity.photo})`}}><p>{activity.activity}</p></div>
                     </>
                 )
             })}
-    
+        </div>
+        }
+        
         </>
     )
 }
 
-
-const mapStateToProps = state =>{
-    return{
-        activities: state.activities.listActivities,
-        itineraries: state.itineraries.listItineraries
+const mapStateToProps = state => {
+    return {
+        activities: state.activities.listActivities
     }
 }
 
 const mapDispatchToProps = {
-    allActivities: activitiesActions.allActivities,
-    allItineraries: itinerariesActions.allItineraries
+    allActivities: activitiesActions.allActivities
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Activities)
