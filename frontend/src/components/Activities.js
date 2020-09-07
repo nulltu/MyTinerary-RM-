@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 import activitiesActions from '../redux/actions/activitiesActions'
 import '../styles/activities.css'
 
 
-
-
 const Activities = (props) => {
 
 
-    useEffect(() => {
-        props.allActivities()
+    props.allActivities()
+    // useEffect(() => {
+    
+    //     props.allActivities()
 
-    }, [])
+    // }, [])
 
     const filterActivity = props.activities.filter(activity => activity.itineraryId === props.itinerary._id)
     console.log(filterActivity)
@@ -20,7 +20,7 @@ const Activities = (props) => {
     return (
         <>
         {filterActivity.length === 0
-        ? (<div><p>No hay nada</p></div>)
+        ? (<div className="not__Available"></div>)
         :
             <div className="container__activity">
         {filterActivity.map(activity => {

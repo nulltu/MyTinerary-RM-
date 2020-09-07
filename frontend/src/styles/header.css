@@ -1,7 +1,7 @@
 
 nav{
     background-color:rgba(245, 245, 245,0.0002);
-    height: 10vh;
+    height: 11vh;
 }
 
 .brand-logo img{
@@ -39,6 +39,13 @@ nav{
 .select-dropdown li.disabled, .select-dropdown li.disabled > span, .select-dropdown li.optgroup {
     color: rgba(0, 0, 0, 0.3);
     background-color: transparent;
+}
+
+.img__profile__userLogin{
+    width: 10vh;
+    margin: 0.5em 7em 0.5em 1em;
+    border: 2px  solid #EAB14D;
+    border-radius: 60px;
 }
 
 @media screen and (max-width: 768px){

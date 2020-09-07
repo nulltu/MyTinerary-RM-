@@ -3,6 +3,8 @@ import { TextInput } from 'react-materialize'
 import '../styles/signIn.css'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import {connect} from 'react-redux'
+import userActions from '../redux/actions/userActions'
 
 
 class SingIn extends React.Component {
@@ -23,7 +25,7 @@ class SingIn extends React.Component {
     sendInfo = e => {
         e.preventDefault()
         const userLogin = { user: this.state.user, password: this.state.password }
-        console.log(userLogin)
+        this.props.logUserIn(userLogin)
     }
 
     render() {
@@ -53,4 +55,8 @@ class SingIn extends React.Component {
     }
 }
 
-export default SingIn
+const mapDispatchToProps = {
+ logUserIn : userActions.logUserIn
+}
+
+export default connect(null, mapDispatchToProps)(SingIn)

@@ -1,6 +1,5 @@
 const initialState = {
-    firstName:'',
-    lastName: ''
+    photoProfile:'',
 }
 
 const userReducer = (state=initialState, action) => {
@@ -8,13 +7,15 @@ const userReducer = (state=initialState, action) => {
         case 'NEW_ACCOUNT':
             return{
                 ...state,
-                firstName: action.payload.firstName,
-                lastName : action.payload.firstName
+                photoProfile : action.payload.urlPhoto
             }
-
+        case 'LOG_USER':
+            return{
+                ...state,
+                photoProfile: action.payload.photoProfile
+            }
             default:
-                return state
-            
+                return state    
     }
 }
 

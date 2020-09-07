@@ -4,9 +4,14 @@ import "../styles/header.css";
 import imgProfile from '../images/profile .svg'
 import { NavLink, Link } from "react-router-dom";
 import { Dropdown, Icon, Navbar, Divider } from 'react-materialize'
+import { connect } from "react-redux";
 
- const Header = () =>{
 
+ const Header = (props) =>{
+
+    console.log(props)
+
+    
   return(
       <>
       <div style={{display:'flex'}}>
@@ -31,14 +36,14 @@ import { Dropdown, Icon, Navbar, Divider } from 'react-materialize'
   <NavLink to="/" className="navLink__header">
     Home
   </NavLink>
-  <NavLink to="" className="navLink__header">
-    Link 2 
+  <NavLink to="cities" className="navLink__header">
+    Cities
   </NavLink>
   <NavLink to="" className="navLink__header">
     Link 3 
   </NavLink>
   <NavLink to="" className="navLink__header">
-    Link 4 
+    link 4
   </NavLink>
 </Navbar>
 <Dropdown
@@ -58,13 +63,13 @@ import { Dropdown, Icon, Navbar, Divider } from 'react-materialize'
     onOpenStart: null,
     outDuration: 250
   }}
-  trigger={<img className="img__profile" src={imgProfile} alt=""/>}
->
+  trigger= {props.photoProfile  ? <img className="img__profile__userLogin" src ={props.photoProfile} alt=""/> : <img className="img__profile" src={imgProfile} alt=""/>}
+  >
   <NavLink to="/SignIn">
-    Login
+    {props.photoProfile ? 'Sign Out' : 'Login'}
   </NavLink>
   <NavLink to="/signUp">
-    Create Acoount
+     {props.photoProfile ? 'My account' : 'Create Account'}
   </NavLink>
   <Divider />
 
@@ -75,4 +80,11 @@ import { Dropdown, Icon, Navbar, Divider } from 'react-materialize'
       </>
   )
  }
-export default Header
+
+
+ const mapStateToProps = state => {
+  return {
+    photoProfile : state.user.photoProfile
+  }
+}
+export default connect(mapStateToProps)(Header)

@@ -1,6 +1,6 @@
 const Joi = require('@hapi/joi')
 
-const validator={
+const validatorSignUp={
     validateData: (req, res, next) =>{
         const schema = Joi.object({
             urlPhoto: Joi.string(),
@@ -25,4 +25,4 @@ const validator={
     }
 }
 
-module.exports = validator
+module.exports = validatorSignUp

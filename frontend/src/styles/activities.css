@@ -31,4 +31,17 @@
     background-color: #FAFAF8;
 }
 
+.not__Available{
+    margin-top: 5em;
+    background-image: url('../images/notActivities.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40vh;
+    height: 32vh;
+    margin-top: 5em;
+    }
+
+.not__Available p{
+    font-size: 5em;
+}
 

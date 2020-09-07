@@ -41,7 +41,11 @@ function SignUp(props) {
     const sendInfo = e => {
         e.preventDefault()
         props.createAccount(newUser)
+        props.history.push('/')
+
     }
+
+   
 
     
 

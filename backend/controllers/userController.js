@@ -13,7 +13,7 @@ const userController = {
     addUser: async(req, res)=>{
         const {urlPhoto, username, firstName, lastName, email, countryOrigin, password} = req.body
         const  passHash = bcryptjs.hashSync(password, 10)
-        const userExists = await User.findOne({username:username})
+        const userExists = await User.findOne({username})
         if(userExists){
             res.json({
                 success: false, error: "Username in use, Choose another username."
@@ -34,7 +34,32 @@ const userController = {
         .catch(error=>{
             res.json({success:false, error: error})
         })
-    }
+    },
+
+
+        loginUser : async(req, res) => {
+            const {username, password} = req.body
+    
+            const userExists = await User.findOne({username})
+
+            if(!userExists){
+                res.json({
+                    success: false, message: 'usuario no existe'
+                })
+            }else{
+                const passwordlogin = bcryptjs.compareSync(password, userExists.password)
+                if(!passwordlogin){
+                    res.json({
+                        success : false, message: 'pasword erronea'})
+                }else{
+                    res.json({
+                        success: true,
+                        username: userExists
+                    })
+                }
+            }
+        }
+    
 }
 
 module.exports = userController
