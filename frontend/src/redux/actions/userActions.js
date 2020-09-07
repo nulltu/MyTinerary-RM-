@@ -22,9 +22,10 @@ const userActions = {
 
     logUserIn : userLogin => {
         return async (dispatch, getState) => {
+
             const response = await axios.post('http://localhost:5000/api/login', userLogin)
             if(!response.data.success){
-                console.log(response)
+                console.log(userLogin)
                 alert(response.data.error)
             }else{
                 dispatch({

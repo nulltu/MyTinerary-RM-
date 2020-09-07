@@ -26,7 +26,6 @@ const userController = {
              res.json({success:true, user})
         }
         
-
         newUser.save() 
         .then(user=>{
             res.json({success: true, user:user})
@@ -41,10 +40,13 @@ const userController = {
             const {username, password} = req.body
     
             const userExists = await User.findOne({username})
+           
 
             if(!userExists){
+                console.log(username)
                 res.json({
                     success: false, message: 'usuario no existe'
+                    
                 })
             }else{
                 const passwordlogin = bcryptjs.compareSync(password, userExists.password)
