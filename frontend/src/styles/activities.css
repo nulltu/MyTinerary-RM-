@@ -45,3 +45,16 @@
     font-size: 5em;
 }
 
+.comment__activity{
+    background-color: #FAFAF8;
+    margin: 5em  55em;
+    padding: 4em;
+    border-radius: 10px;
+    border: 5px solid #334780;
+}
+
+.comment__activity label{
+    color: #334780;
+    font-size: 2em;
+    font-weight: bolder;
+}

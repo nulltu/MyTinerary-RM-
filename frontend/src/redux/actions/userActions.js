@@ -11,6 +11,7 @@ const userActions = {
                 const error =response.data.error
                 alert(error)
             } else{
+                
                 alert('usuario creado correctamente')
                 dispatch({
                     type:'NEW_ACCOUNT',
@@ -20,18 +21,28 @@ const userActions = {
         }
     },
 
-    logUserIn : userLogin => {
+    logUserIn : dataLogin => {
         return async (dispatch, getState) => {
-            const response = await axios.post('http://localhost:5000/api/login', userLogin)
+            const response = await axios.post('http://localhost:5000/api/login', dataLogin)
             if(!response.data.success){
-                console.log(response)
-                alert(response.data.error)
+                alert(response.data)
+                console.log(response.data)
             }else{
-                dispatch({
+                console.log(response.data.user)
+                dispatch(
+                    {
                     type: 'LOG_USER',
-                    payload : response.data.user
+                    payload : response.data.username
                 })
             }
+        }
+    },
+
+    logOut: () => {
+        return (dispatch, getState) => {
+            dispatch({
+                type: 'LOG_OUT'
+            })
         }
     }
 }
