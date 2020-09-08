@@ -22,15 +22,17 @@ class SingIn extends React.Component {
         })
     }
 
-    sendInfo = e => {
+    sendInfo = async e => {
         e.preventDefault()
-        const userLogin = { user: this.state.username, password: this.state.password }
-        this.props.logUserIn(userLogin)
+        const dataLogin = { username: this.state.username, password: this.state.password }
+        const response = await this.props.logUserIn(dataLogin)
+        
     }
+
+    
 
     render() {
 
-        console.log(this.state.username)
         return (
             <>  
     
@@ -38,7 +40,7 @@ class SingIn extends React.Component {
                     <div className="img__backgroud__signIn"></div>
                 <div className="container__signIn">
                     <p>Sign in to Mytinerary</p>
-                    <label htmlFor="">Username</label><TextInput type="text" name="username" onChange={this.readInput} />
+                    <label htmlFor="">Username</label><TextInput name="username" onChange={this.readInput} />
                     <label htmlFor="">Password</label><TextInput type="password" name="password" onChange={this.readInput} />
                     <div style={{textAlign:'center'}}><button onClick={this.sendInfo} className="button__signIn">Sign in</button></div>
                     <div className="container__signIn__more">

@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const bcryptjs = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 
 const userController = {
     listUsers : async(req, res)=>{
@@ -14,6 +15,7 @@ const userController = {
         const {urlPhoto, username, firstName, lastName, email, countryOrigin, password} = req.body
         const  passHash = bcryptjs.hashSync(password, 10)
         const userExists = await User.findOne({username})
+   
         if(userExists){
             res.json({
                 success: false, error: "Username in use, Choose another username."
@@ -25,38 +27,29 @@ const userController = {
              var user = await newUser.save()
              res.json({success:true, user})
         }
-        
-        newUser.save() 
-        .then(user=>{
-            res.json({success: true, user:user})
-        })
-        .catch(error=>{
-            res.json({success:false, error: error})
-        })
     },
-
 
         loginUser : async(req, res) => {
             const {username, password} = req.body
     
             const userExists = await User.findOne({username})
-           
-
+            console.log(username)
+            console.log(password)
             if(!userExists){
                 console.log(username)
                 res.json({
-                    success: false, message: 'usuario no existe'
-                    
+                    success: false, message: 'The username or password you entered is incorrect'
                 })
             }else{
                 const passwordlogin = bcryptjs.compareSync(password, userExists.password)
                 if(!passwordlogin){
                     res.json({
-                        success : false, message: 'pasword erronea'})
+                        success : false, message: 'The username or password you entered is incorrect'})
                 }else{
+                    // jwt.sign(userExist)
                     res.json({
                         success: true,
-                        username: userExists
+/*con este mismo nombre tengo que llamar en la action*/   username: userExists
                     })
                 }
             }
