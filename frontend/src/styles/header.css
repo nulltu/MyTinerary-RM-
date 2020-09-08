@@ -42,10 +42,12 @@ nav{
 }
 
 .img__profile__userLogin{
-    width: 10vh;
-    margin: 0.5em 7em 0.5em 1em;
+    width: 11em;
+    height: 11vh;
+    padding: 0px;
+    margin: .5em 7em .5em 1em;
     border: 2px  solid #EAB14D;
-    border-radius: 60px;
+    border-radius:50px;
 }
 
 @media screen and (max-width: 768px){

@@ -12,7 +12,7 @@ const userReducer = (state=initialState, action) => {
         case 'LOG_USER':
             return{
                 ...state,
-                photoProfile: action.payload.photoProfile
+                photoProfile: action.payload.urlPhoto
             }
             default:
                 return state    
