@@ -1,3 +1,5 @@
+import axios from "axios"
+
 const itinerariesActions={
 
     allItineraries: () => {
@@ -13,8 +15,13 @@ const itinerariesActions={
                     payload: dataItinerary
                 })
         }
-    }
+    },
 
+    // upComment : (idUser, comment, token ) =>{
+    //     return (dispatch, getState) => {
+    //         const response  =  axios.put(`http://127.0.0.1:5000/api/itineraries`, {idUser, comment, token} ) 
+    //     }
+    // }
 }
 
 export default itinerariesActions

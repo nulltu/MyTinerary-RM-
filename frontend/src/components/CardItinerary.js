@@ -5,6 +5,8 @@ import money from '../images/money.svg'
 import { Link } from 'react-router-dom'
 import '../styles/card.css'
 import Activities from './Activities'
+import  {connect} from 'react-redux'
+import activitiesActions from '../redux/actions/activitiesActions'
 // import itinerariesActions from '../redux/actions/itinerariesActions'
 
 
@@ -14,7 +16,9 @@ class CardItinerary extends React.Component {
         viewMore: false,
         iData: []
 
-    }
+    }   
+
+    
 
     changeState = () => {
         this.setState({
@@ -22,9 +26,8 @@ class CardItinerary extends React.Component {
         })
     }
 
-
-
     render() {
+        
         
         function priceItinerary(price) {
             switch (price) {
@@ -60,6 +63,7 @@ class CardItinerary extends React.Component {
                     {this.state.viewMore
                         ? (<div>
                             <Activities itinerary = {this.props.itinerary}></Activities>
+                            
                         </div>)
                         : null
                     }
@@ -71,4 +75,16 @@ class CardItinerary extends React.Component {
     }
 }
 
-export default CardItinerary
+const mapStateToProps = state => {
+    return {
+        activities: state.activities.listActivities,
+        token: state.user.token
+    }
+}
+
+const mapDispatchToProps = {
+    allActivities: activitiesActions.allActivities,
+    // upcomment: itinerariesActions.upComment
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardItinerary)

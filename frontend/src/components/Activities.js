@@ -5,11 +5,12 @@ import '../styles/activities.css'
 import { TextInput, Icon } from 'react-materialize'
 import { useEffect } from 'react'
 import {Button} from 'react-materialize'
+import Comments from './Comments'
 
 
 const Activities = (props) => {
 
-
+    
 
     useEffect(() => {
 
@@ -19,7 +20,6 @@ const Activities = (props) => {
 
     const filterActivity = props.activities.filter(activity => activity.itineraryId === props.itinerary._id)
 
-    console.log(props)
 
     return (
         <>
@@ -38,24 +38,8 @@ const Activities = (props) => {
                 </div>
                 )
             }
-
-            {props.token !== ""
-                ?
-                <div className="comment__activity">
-                    <TextInput
-                        id="TextInput-4"
-                        htmlFor=""
-                        label="Comment your experience..."
-                    />
-             <Button className="boton__send__comment" node="button">
-    <Icon>
-    play_arrow
-    </Icon>
-  </Button>
-                </div>
-                : <div className="comment__notRegistered"><p>Only registered users can comment.</p></div>
-            }
-
+        <Comments itinerary ={props.itinerary}/>
+ 
         </>
     )
 }

@@ -17,13 +17,13 @@ router.route('/cities')
 router.route('/itineraries')
 .get(itinieraryController.listItineraries)
 .post(itinieraryController.addItinerary)
+.put(itinieraryController.upComment)
 
-// router.route('cityItinerary/:id/comment')
-// .put(itinieraryController.addComment)
-// .delete(itineraryController.deleteComment)
+
 
 router.route('/cityItinerary/:id')
 .get(itinieraryController.bringCityItinerary)
+
 
 router.route('/cities/:id')
 .get(cityController.viewCity)

@@ -8,6 +8,8 @@ class City extends React.Component {
         return (
             <>
 
+            console.log()
+
                 <Link to={`./cityItinerary/${this.props.city._id}`}>
                     <Col
                         l={4}

@@ -38,13 +38,20 @@ const itineraryController={
         })
     },
 
-    addComment: async(req, res) => {
-        await Itinerary.findOneAndUpdate({cityId: req.params.id}, req.body)
-    },
+    upComment: async(req, res) =>{
+       const upComment = req.body.comments 
+    //    const user = req.body.username
+    //    const photo = req.body.urlPhoto
+        console.log(upComment)
+        const comment =await Itinerary.findByIdAndUpdate({_id:req.body.id}, {$push:{comments: upComment}})
+        .then( user => {
+            res.json({success: true, comments})
+        })
+        .catch(error =>{
+            res.json({success: false, error})
+        })
+    }
 
-    // deleteComment: async(req, res) => {
-    //     await Itinerary.findOneAndUpdate()
-    // }
 }
 
 module.exports=itineraryController

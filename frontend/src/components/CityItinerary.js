@@ -23,7 +23,7 @@ class CityItinerary extends React.Component {
 
     render() {
 
-        // console.log(this.props.itineraries)
+    
 
         if (this.props.itineraries === null) {
             return (

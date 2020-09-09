@@ -7,7 +7,7 @@ const userActions = {
 
             const response = await axios.post('http://localhost:5000/api/signUp', newUser)
             if(!response.data.success){
-                console.log(response)
+               
             } else{
                 alert('Thanks for signing up to Mytinerary')
                 dispatch({
