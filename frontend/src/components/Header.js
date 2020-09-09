@@ -9,71 +9,56 @@ import { connect } from "react-redux";
 
  const Header = (props) =>{
 
-    console.log(props)
+  console.log(props)
 
-    
   return(
       <>
       <div style={{display:'flex'}}>
       <Navbar
-  alignLinks="right"
-  brand={<Link className="brand-logo" to="/"><img src={logo} alt=""/></Link>}
-  centerChildren
-  id="mobile-nav"
-  menuIcon={<Icon className="icon__menu">menu</Icon>}
-  options={{
-    draggable: true,
-    edge: 'left',
-    inDuration: 250,
-    onCloseEnd: null,
-    onCloseStart: null,
-    onOpenEnd: null,
-    onOpenStart: null,
-    outDuration: 200,
-    preventScrolling: true
-  }}
->
-  <NavLink to="/" className="navLink__header">
-    Home
-  </NavLink>
-  <NavLink to="cities" className="navLink__header">
-    Cities
-  </NavLink>
-  <NavLink to="" className="navLink__header">
-    Link 3 
-  </NavLink>
-  <NavLink to="" className="navLink__header">
-    link 4
-  </NavLink>
-</Navbar>
-<Dropdown
-  id="Dropdown_6"
-  options={{
-    alignment: 'left',
-    autoTrigger: true,
-    closeOnClick: true,
-    constrainWidth: true,
-    container: null,
-    coverTrigger: false,
-    hover: false,
-    inDuration: 150,
-    onCloseEnd: null,
-    onCloseStart: null,
-    onOpenEnd: null,
-    onOpenStart: null,
-    outDuration: 250
-  }}
-  trigger= {props.photoProfile  ? <img className="img__profile__userLogin" src ={props.photoProfile} alt=""/> : <img className="img__profile" src={imgProfile} alt=""/>}
-  >
-  <NavLink to="/SignIn">
-    {props.photoProfile ? 'Sign Out' : 'Login'}
-  </NavLink>
-  <NavLink to="/signUp">
-     {props.photoProfile ? 'My account' : 'Create Account'}
-  </NavLink>
-  <Divider />
-
-</Dropdown>
+          alignLinks="right"
+          brand={<Link className="brand-logo" to="/"><img src={logo} alt="" /></Link>}
+          centerChildren
+          id="mobile-nav"
+          menuIcon={<Icon className="icon__menu">menu</Icon>}
+          options={{
+            draggable: true,
+            edge: 'left',
+            inDuration: 250,
+            onCloseEnd: null,
+            onCloseStart: null,
+            onOpenEnd: null,
+            onOpenStart: null,
+            outDuration: 200,
+            preventScrolling: true
+          }}
+        >
+          <NavLink to="/" className="navLink__header">Home</NavLink>
+          <NavLink to="cities" className="navLink__header">Cities</NavLink>
+          <NavLink to="" className="navLink__header">Link 3</NavLink>
+          <NavLink to="" className="navLink__header">link 4</NavLink>
+          </Navbar>
+        <Dropdown
+          id="Dropdown_6"
+          options={{
+            alignment: 'left',
+            autoTrigger: true,
+            closeOnClick: true,
+            constrainWidth: true,
+            container: null,
+            coverTrigger: false,
+            hover: false,
+            inDuration: 150,
+            onCloseEnd: null,
+            onCloseStart: null,
+            onOpenEnd: null,
+            onOpenStart: null,
+            outDuration: 250
+          }}
+          trigger={props.token ? <img className="img__profile__userLogin" src={props.photoProfile} alt="" /> : <img className="img__profile" src={imgProfile} alt="" />}
+        >
+          {props.token ? <NavLink to="/logout">Logout</NavLink> : <NavLink to="/signIn">SignIn</NavLink>}
+          {props.token ? <NavLink to="/">My Account</NavLink> : <NavLink to="signUp">Create Account</NavLink>}
+        </Dropdown>
 
       </div>
       
@@ -81,10 +66,11 @@ import { connect } from "react-redux";
   )
  }
 
-
  const mapStateToProps = state => {
   return {
-    photoProfile : state.user.photoProfile
+    photoProfile : state.user.photoProfile,
+    username : state.user.username,
+    token: state.user.token
   }
 }
 export default connect(mapStateToProps)(Header)

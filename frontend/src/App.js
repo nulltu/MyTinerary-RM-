@@ -7,8 +7,7 @@ import Header from './components/Header'
 import CityItinerary from './components/CityItinerary'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
-
-
+import Logout from './components/Logout'
 
 
 class App extends React.Component{
@@ -26,6 +25,7 @@ class App extends React.Component{
           <Route path='/cityItinerary/:id' component={CityItinerary}/>
           <Route path='/signIn' component={SignIn}/>
           <Route path='/signUp' component={SignUp}/>
+          <Route path='/logout' component={Logout}/>
           <Redirect to='/'/>
           </Switch>
           </BrowserRouter>

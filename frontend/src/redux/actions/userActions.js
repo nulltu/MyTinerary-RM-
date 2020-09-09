@@ -7,17 +7,19 @@ const userActions = {
 
             const response = await axios.post('http://localhost:5000/api/signUp', newUser)
             if(!response.data.success){
-                console.log(response.data)
-                const error =response.data.error
-                alert(error)
+                console.log(response)
             } else{
-                
-                alert('usuario creado correctamente')
+                alert('Thanks for signing up to Mytinerary')
                 dispatch({
-                    type:'NEW_ACCOUNT',
-                    payload: response.data.user
+                    type:'LOG_IN_APP',
+                    payload: {
+                        urlPhoto: response.data.urlPhoto,
+                        username: response.data.username,
+                        token: response.data.token
+                    }
                 })
             }
+            return response
         }
     },
 
@@ -25,21 +27,25 @@ const userActions = {
         return async (dispatch, getState) => {
             const response = await axios.post('http://localhost:5000/api/login', dataLogin)
             if(!response.data.success){
-                alert(response.data.message)
             }else{
                 dispatch(
                     {
-                    type: 'LOG_USER',
-                    payload : response.data.username
+                    type: 'LOG_IN_APP',
+                    payload : {
+                        urlPhoto: response.data.urlPhoto,
+                        username: response.data.username,
+                        token: response.data.token,
+                    }
                 })
             }
+            return response
         }
     },
 
-    logOut: () => {
+    logoutUser: () => {
         return (dispatch, getState) => {
             dispatch({
-                type: 'LOG_OUT'
+                type: 'LOG_OUT_APP'
             })
         }
     }

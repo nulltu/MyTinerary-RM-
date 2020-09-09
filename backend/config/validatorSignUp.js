@@ -18,7 +18,8 @@ const validatorSignUp={
             return res.json({
                 success: false,
                 error: "validation with errors, check the fields.",
-                message: validation.error
+                message: validation.error,
+                details: [validation.error]
             })
         }
         next()

@@ -63,6 +63,10 @@
     text-decoration: none;
 }
 
+.button__signUp:hover{
+    background-image: linear-gradient(to right, #EAB14D 0%, #050505 100%);
+    color: #ffffff;
+}
 .container__signUp p{
     color: #334780;
     text-align: center;
@@ -81,6 +85,28 @@
 
 .container__signUp__more a{
     color: #334780;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .text__container__signUp{
+        width: 40%;
+        background-image: url('../images/banner.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        background-size: 60vh;
+        border-radius: 20px;
+    }
+
+    .container__signUp{
+        border: 5px solid whitesmoke;
+        width: 90%;
+        padding: 3em;
+        margin: 4em;
+        background-color: #FDB94C;
+        border-radius: 20px;
+    }
 }
 
 
@@ -128,4 +154,6 @@
     
     
 }
+
+
 

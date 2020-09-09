@@ -17,6 +17,9 @@ function SignUp(props) {
     })
 
     const [countries, setCountries] = useState([])
+    const [errorInput, setErrorInput] = useState(null)
+    const [errorTest, setErrorTest] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         getData()
@@ -38,16 +41,22 @@ function SignUp(props) {
         })
     }
 
-    const sendInfo = e => {
+    const sendInfo = async e => {
+       
         e.preventDefault()
-        props.createAccount(newUser)
-        props.history.push('/')
+        setLoading(true)
+        await props.createAccount(newUser)
+        const response = await props.createAccount(newUser)
+        if(response.data.error){
+            setErrorInput(response.data.error)}
 
+          if(response.data.error){
+              setErrorTest(response.data.error.message)
+          }  
+          setLoading(false)
     }
 
-   
-
-    
+    console.log(errorTest)
 
     return (
         <>  
@@ -61,6 +70,7 @@ function SignUp(props) {
                 <label htmlFor="">First Name</label><TextInput onChange={readInput} type="text" name="firstName" placeholder="John" />
                 <label htmlFor="">Last Name</label><TextInput onChange={readInput} type="text" name="lastName" placeholder="Wick" />
                 <label htmlFor="">Email</label><TextInput email onChange={readInput} type="text" name="email" id="" placeholder="for example: jhon@mytinerary.com"  validate/>
+    
 
                 <Select
                     className="select"
@@ -94,7 +104,8 @@ function SignUp(props) {
                 </Select>
 
                 <label htmlFor="">Password</label><TextInput onChange={readInput} type="password" name="password" placeholder="Min 6 characters" />
-                <div style={{textAlign:'center'}}><button onClick={sendInfo} className="button__signUp">Create account</button></div>
+                <label htmlFor="" className="error__input__signUp">{errorInput}</label>
+                <div style={{textAlign:'center'}}><button onClick={sendInfo} disabled={loading} className="button__signUp">Create account</button></div>
                 <div className="container__signUp__more">
                 <Link to="/signIn">do you already have an account?</Link>
             </div>

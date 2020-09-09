@@ -25,7 +25,17 @@ const userController = {
                  urlPhoto, username, firstName, lastName, email, countryOrigin, password: passHash
              })
              var user = await newUser.save()
-             res.json({success:true, user})
+             jwt.sign({...newUser}, process.env.SECRETORKEY, {},(error, token) => {
+                 if(error){
+                     res.json({
+                         success:false, error
+                     })
+                 }else{
+                     res.json({
+                         success : true, token, urlPhoto: newUser.urlPhoto
+                     })
+                 }
+             })
         }
     },
 
@@ -46,11 +56,18 @@ const userController = {
                     res.json({
                         success : false, message: 'The username or password you entered is incorrect'})
                 }else{
-                    // jwt.sign(userExist)
-                    res.json({
-                        success: true,
-/*con este mismo nombre tengo que llamar en la action*/   username: userExists
+                    jwt.sign({...userExists}, process.env.SECRETORKEY, {}, (error, token) => {
+                        if(error){
+                            res.json({
+                                success: false, error: 'Error'
+                            })
+                        }else{
+                            res.json({
+                                success: true, urlPhoto : userExists.urlPhoto, username : userExists.username ,token 
+                            })
+                        }
                     })
+      
                 }
             }
         }

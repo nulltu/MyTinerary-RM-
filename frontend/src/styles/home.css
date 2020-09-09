@@ -86,7 +86,7 @@
   }
 
   
-  .btn, .btn-large, .btn-small{
+  .btn.message-btn{
     background-color: #EAB14D!important;
     width: 10em;
   }

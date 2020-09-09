@@ -47,14 +47,55 @@
 
 .comment__activity{
     background-color: #FAFAF8;
-    margin: 5em  55em;
+    margin: 1em 55em 4em;
     padding: 4em;
     border-radius: 10px;
-    border: 5px solid #334780;
+    border: 2px solid #334780;
 }
 
 .comment__activity label{
     color: #334780;
-    font-size: 2em;
+    font-size: 1.3em;
     font-weight: bolder;
+}
+
+.comment__notRegistered{
+    background-color: #FAFAF8;
+    margin: 1em 55em 4em;
+    padding: 4em;
+    border-radius: 10px;
+    border: 2px solid #334780;
+}
+.comment__notRegistered p{
+    font-size: 2em;
+    color: #334780;
+}
+
+.boton__send__comment{
+    background-color: #334780;
+    color: #EAB14D;
+}
+
+.boton__send__comment:hover{
+    background-color: #EAB14D;
+    color: #334780;
+}
+
+@media screen and (max-width: 768px){
+
+    .comment__activity{
+        background-color: #FAFAF8;
+        margin: 5em  10em;
+        padding: 3em;
+        border-radius: 10px;
+        border: 2px solid #334780;
+    }
+
+
+.comment__activity label{
+    color: #334780;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
 }

@@ -53,6 +53,10 @@
     text-decoration: none;
 }
 
+.button__signIn:hover{
+    background-image: linear-gradient(to right, #334780  0%, #EAB14D 100%);
+    color: #ffffff;
+}
 .container__signIn__more{
     margin-top: 0.5em;
     font-size: 1.3em;
@@ -61,6 +65,40 @@
 
 .container__signIn__more a{
     color: #334780;
+}
+
+
+@media screen and (max-width: 1500px){
+
+
+    .container__signIn{
+        width: 30%;
+        padding: 4em;
+        width: 40%;
+        border: 5px solid whitesmoke;
+        border-radius: 10px;
+        margin:4em;
+        height: 60vh;
+    }  
+
+}
+
+
+@media screen and (max-width: 1068px){
+
+    .img__backgroud__signIn{
+        display: none;
+     }
+ 
+    .container__signIn{
+        padding: 3em;
+        width: 90%;
+        border: 5px solid #FDB94C;
+        border-radius: 10px;
+        margin:1em;
+        height: 60vh;
+    }  
+
 }
 
 
@@ -82,24 +120,8 @@
         margin:1em;
         height: 60vh;
     }  
-    
-    
-}
-
-@media screen and (max-width: 1068px){
-
-    .img__backgroud__signIn{
-        display: none;
-     }
- 
-    .container__signIn{
-        padding: 3em;
-        width: 90%;
-        border: 5px solid #FDB94C;
-        border-radius: 10px;
-        margin:1em;
-        height: 60vh;
-    }  
 
 }
+
+
 

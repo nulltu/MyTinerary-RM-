@@ -1,20 +1,28 @@
 const initialState = {
     photoProfile:'',
+    username: '',
+    token:''
 }
 
 const userReducer = (state=initialState, action) => {
     switch (action.type){
-        case 'NEW_ACCOUNT':
+       
+        case 'LOG_IN_APP':
+            localStorage.setItem('token', action.payload.token)
             return{
                 ...state,
-                photoProfile : action.payload.urlPhoto
+                photoProfile: action.payload.urlPhoto,
+                username: action.payload.username,
+                token: action.payload.token
+                
             }
-        case 'LOG_USER':
-            return{
+        case 'LOG_OUT_APP':
+            localStorage.clear()
+            return {
                 ...state,
-                photoProfile: action.payload.urlPhoto
+                ...initialState
             }
-            default:
+            default: 
                 return state    
     }
 }

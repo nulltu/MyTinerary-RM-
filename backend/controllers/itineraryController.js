@@ -30,14 +30,21 @@ const itineraryController={
             res.json({success:false, error: error})
         })
     },
-    
 
     bringCityItinerary:async(req, res)=>{
         const itineratySearch = await Itinerary.find({cityId: req.params.id})
         res.json({
             Itinerary : itineratySearch
         })
-    }
+    },
+
+    addComment: async(req, res) => {
+        await Itinerary.findOneAndUpdate({cityId: req.params.id}, req.body)
+    },
+
+    // deleteComment: async(req, res) => {
+    //     await Itinerary.findOneAndUpdate()
+    // }
 }
 
 module.exports=itineraryController
