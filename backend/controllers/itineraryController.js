@@ -40,15 +40,13 @@ const itineraryController={
 
     upComment: async(req, res) =>{
        const upComment = req.body.comments 
-    //    const user = req.body.username
-    //    const photo = req.body.urlPhoto
-        console.log(upComment)
-        const comment =await Itinerary.findByIdAndUpdate({_id:req.body.id}, {$push:{comments: upComment}})
-        .then( user => {
-            res.json({success: true, comments})
-        })
-        .catch(error =>{
-            res.json({success: false, error})
+        const commentItinerary = await Itinerary.findByIdAndUpdate({_id:req.body.idItinerary}, {$push:{comments: upComment}})
+        console.log(commentItinerary)
+        const itineraries = await Itinerary.find({cityId: commentItinerary.cityId})
+
+        res.json({
+            success: true,
+            itineraries
         })
     }
 

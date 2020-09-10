@@ -17,11 +17,24 @@ const itinerariesActions={
         }
     },
 
-    // upComment : (idUser, comment, token ) =>{
-    //     return (dispatch, getState) => {
-    //         const response  =  axios.put(`http://127.0.0.1:5000/api/itineraries`, {idUser, comment, token} ) 
-    //     }
-    // }
+    upComment : (idItinerary, dataComment, idCity) =>{
+        return async (dispatch, getState) => {
+               const response  = await axios.put('http://127.0.0.1:5000/api/itineraries', {idItinerary, comments:dataComment, idCity})  
+               const itineraries = response.data.itineraries
+               if(!response.data.success){
+               }else{
+                dispatch({
+                    type: 'RENDER_COMMENT',
+                    payload : itineraries
+                })
+               }
+
+               
+            }  
+           
+    },
+
+     
 }
 
 export default itinerariesActions

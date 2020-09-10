@@ -2,9 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import activitiesActions from '../redux/actions/activitiesActions'
 import '../styles/activities.css'
-import { TextInput, Icon } from 'react-materialize'
 import { useEffect } from 'react'
-import {Button} from 'react-materialize'
 import Comments from './Comments'
 
 

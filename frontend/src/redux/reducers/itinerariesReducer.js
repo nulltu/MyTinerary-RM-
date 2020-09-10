@@ -9,6 +9,12 @@ const itinerariesReducer = (state = initialState, action)=>{
                 ...state,
                 listItineraries : action.payload
             }
+            case 'RENDER_COMMENT':
+                console.log(action.payload)
+                return{
+                    ...state,
+                    listItineraries: action.payload
+                }
             default: 
             return state
     }

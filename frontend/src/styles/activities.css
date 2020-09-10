@@ -46,8 +46,13 @@
 }
 
 .comment__activity{
+    
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     background-color: #FAFAF8;
-    margin: 1em 55em 4em;
+   
+  
     padding: 4em;
     border-radius: 10px;
     border: 2px solid #334780;
@@ -79,6 +84,16 @@
 .boton__send__comment:hover{
     background-color: #EAB14D;
     color: #334780;
+}
+
+.img__profile__comment{
+    width: 5em;
+    height: 5vh;
+    padding: 0px;
+    margin: 1em 15em .5em 1em;
+    border: 2px  solid #334780;
+    border-radius:50%;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 768px){

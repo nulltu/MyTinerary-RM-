@@ -3,7 +3,7 @@ import logo from '../images/logo.svg'
 import "../styles/header.css";
 import imgProfile from '../images/profile .svg'
 import { NavLink, Link } from "react-router-dom";
-import { Dropdown, Icon, Navbar, Divider } from 'react-materialize'
+import { Dropdown, Icon, Navbar } from 'react-materialize'
 import { connect } from "react-redux";
 
 
@@ -34,8 +34,6 @@ import { connect } from "react-redux";
         >
           <NavLink to="/" className="navLink__header">Home</NavLink>
           <NavLink to="cities" className="navLink__header">Cities</NavLink>
-          <NavLink to="" className="navLink__header">Link 3</NavLink>
-          <NavLink to="" className="navLink__header">link 4</NavLink>
           </Navbar>
         <Dropdown
           id="Dropdown_6"
@@ -57,7 +55,7 @@ import { connect } from "react-redux";
           trigger={props.token ? <img className="img__profile__userLogin" src={props.photoProfile} alt="" /> : <img className="img__profile" src={imgProfile} alt="" />}
         >
           {props.token ? <NavLink to="/logout">Logout</NavLink> : <NavLink to="/signIn">SignIn</NavLink>}
-          {props.token ? <NavLink to="/">My Account</NavLink> : <NavLink to="signUp">Create Account</NavLink>}
+        {props.token ? <NavLink className="link__user__login" to="/">Signed in as <span className="username__dropdown">{props.username}</span></NavLink> : <NavLink to="signUp">Create Account</NavLink>}
         </Dropdown>
 
       </div>

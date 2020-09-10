@@ -43,10 +43,8 @@ const userController = {
             const {username, password} = req.body
     
             const userExists = await User.findOne({username})
-            console.log(username)
-            console.log(password)
             if(!userExists){
-                console.log(username)
+        
                 res.json({
                     success: false, message: 'The username or password you entered is incorrect'
                 })

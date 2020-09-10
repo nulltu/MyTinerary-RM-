@@ -23,8 +23,8 @@ nav{
 }
 
 .img__profile{
-    width: 6em;
-    margin-right: 20.5em;
+    width: 10em;
+    margin: 1em 15em .5em 1em;
 }
 
 .z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
@@ -42,8 +42,8 @@ nav{
 }
 
 .img__profile__userLogin{
-    width: 12em;
-    height: 12vh;
+    width: 9em;
+    height: 10vh;
     padding: 0px;
     margin: 1em 15em .5em 1em;
     border: 4px  solid #EAB14D;
@@ -51,15 +51,47 @@ nav{
     object-fit: cover;
 }
 
-@media screen and (max-width: 768px){
-    .img__profile{
-    width: 6em;
-    margin-right: 5.5em;
-    }
+.username__dropdown{
+    color: #334780;
+    font-size: 1.3em;
+    font-weight: bolder;
+    margin-left: 4px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
 
+.link__user__login{
+    background-color: #EAB14D;
+}
+
+@media screen and (max-width: 1500px){
+
+.img__profile__userLogin{
+    width: 10em;
+    height: 10vh;
+}
+}
+
+
+@media screen and (max-width: 768px){
     .brand-logo img{
     width: 6em!important;
     padding: 0.5em;
+    }
+
+    .img__profile{
+        width: 10em;
+        margin: 1em 5em .5em 1em;
+    }
+
+    .img__profile__userLogin{
+        width: 7em;
+        height: 8vh;
+        padding: 0px;
+        margin: 1em 5em .5em 1em;
+        border: 1px  solid #EAB14D;
+        border-radius:50%;
+        object-fit: cover;
     }
 
 }
