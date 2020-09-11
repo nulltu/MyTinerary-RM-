@@ -6,17 +6,23 @@ import Footer from '../components/Footer'
 
 
 
+
 class Home extends React.Component{
 
 
 render(){
 
+  
     
     return (
     
     <>
     
     <div className="background___home">
+      <h1>
+       
+      </h1>
+      
     <p className="text-message">
       Find your perfect trip, <br></br> 
       designed by insiders who know and love their cities.

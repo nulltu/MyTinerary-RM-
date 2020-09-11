@@ -41,6 +41,13 @@
    
 }
 
+#error__input{
+    color: red;
+    font-weight: bolder;
+    font-size: 1.7em;
+    padding-top: 1em ;
+}
+
 .button__signIn{
     padding: 1.5rem 3rem;
     letter-spacing: 1px;

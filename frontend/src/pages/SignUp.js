@@ -55,8 +55,11 @@ function SignUp(props) {
           }  
           setLoading(false)
     }
+    
 
-    console.log(errorTest)
+    if(props.token !== ""){
+        props.history.push('/')
+    }
 
     return (
         <>  
@@ -104,7 +107,8 @@ function SignUp(props) {
                 </Select>
 
                 <label htmlFor="">Password</label><TextInput onChange={readInput} type="password" name="password" placeholder="Min 6 characters" />
-                <label htmlFor="" className="error__input__signUp">{errorInput}</label>
+                <div className="center"> <label htmlFor="" id="error__input__signUp">{errorInput}</label></div>
+               
                 <div style={{textAlign:'center'}}><button onClick={sendInfo} disabled={loading} className="button__signUp">Create account</button></div>
                 <div className="container__signUp__more">
                 <Link to="/signIn">do you already have an account?</Link>
@@ -123,8 +127,14 @@ function SignUp(props) {
     )
 }
 
+const mapStateToProps = state => {
+    return {
+      token: state.user.token
+    }
+  }
+
 const mapDispatchToProps = {
     createAccount : userActions.createAccount
 }
 
-export default connect(null, mapDispatchToProps) (SignUp)
+export default connect(mapStateToProps, mapDispatchToProps) (SignUp)

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
 import { connect } from 'react-redux'
 import userActions from '../redux/actions/userActions'
+import errorAuth from '../images/error_auth.svg'
 
 
 class SingIn extends React.Component {
@@ -15,6 +16,8 @@ class SingIn extends React.Component {
         errorInput: null
 
     }
+
+    
 
     readInput = e => {
         const textBox = e.target.name
@@ -35,6 +38,12 @@ class SingIn extends React.Component {
 
     render() {
 
+        if(this.props.token !== ""){
+            setTimeout(() => {
+            this.props.history.push('/')
+        }, 2000);
+        }
+
         return (
             <>
 
@@ -44,7 +53,9 @@ class SingIn extends React.Component {
                         <p>Sign in to Mytinerary</p>
                         <label htmlFor="">Username</label><TextInput name="username" onChange={this.readInput} />
                         <label htmlFor="">Password</label><TextInput type="password" name="password" onChange={this.readInput} />
-                        <label htmlFor="" className='error__input'>{this.state.errorInput}.</label>
+                        <div className= "error__authentication">
+                        <span id="error__input">{this.state.errorInput}.</span>
+                        </div>
                         <div style={{ textAlign: 'center' }}><button onClick={this.sendInfo} className="button__signIn">Sign in</button></div>
                         <div className="container__signIn__more">
                             <span>New to Mytinerary? <Link to="/signUp">Create an account.</Link> </span>
@@ -62,8 +73,17 @@ class SingIn extends React.Component {
     }
 }
 
+
+    
+
+const mapStateToProps = state => {
+    return {
+      token: state.user.token
+    }
+  }
+
 const mapDispatchToProps = {
     logUserIn: userActions.logUserIn
 }
 
-export default connect(null, mapDispatchToProps)(SingIn)
+export default connect(mapStateToProps, mapDispatchToProps)(SingIn)

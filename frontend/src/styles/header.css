@@ -53,7 +53,7 @@ nav{
 
 .username__dropdown{
     color: #334780;
-    font-size: 1.3em;
+    font-size: 0.8em;
     font-weight: bolder;
     margin-left: 4px;
     letter-spacing: 1.5px;
@@ -67,7 +67,7 @@ nav{
 @media screen and (max-width: 1500px){
 
 .img__profile__userLogin{
-    width: 10em;
+    width: 8em;
     height: 10vh;
 }
 }

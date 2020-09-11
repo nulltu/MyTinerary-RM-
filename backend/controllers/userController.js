@@ -32,7 +32,7 @@ const userController = {
                      })
                  }else{
                      res.json({
-                         success : true, token, urlPhoto: newUser.urlPhoto
+                         success : true, urlPhoto: newUser.urlPhoto, username:newUser.username, token
                      })
                  }
              })

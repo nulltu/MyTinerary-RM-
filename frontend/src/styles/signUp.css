@@ -87,6 +87,14 @@
     color: #334780;
 }
 
+#error__input__signUp{
+    color: red;
+    font-weight: bolder;
+    font-size: 1.5em;
+    padding-top: 1em ;
+    
+}
+
 
 @media only screen and (max-width: 1200px) {
     .text__container__signUp{
